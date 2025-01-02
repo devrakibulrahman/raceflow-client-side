@@ -2,7 +2,8 @@
 const Navbar = () => {
     return (
         <>
-            <h1>Navbar</h1>
+            <header className="w-full py-6">
+            </header>
         </>
     );
 };
