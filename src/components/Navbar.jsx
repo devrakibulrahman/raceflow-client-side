@@ -7,8 +7,18 @@ import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import '../styles/custom.css';
 import light from '../assets/raceflow-light.png';
+import { useState } from "react";
 
 const Navbar = () => {
+
+    // boolean state declare here ---->
+    const [navActive, setNavActive] = useState(false);
+
+    // event handle declare here ---->
+    const handleActiveNav = () => {
+        setNavActive(!navActive);
+    };
+
     return (
         <>
             <header className='w-full py-8'>
@@ -31,15 +41,19 @@ const Navbar = () => {
                                 </nav>
                             </div>
                             <div className='w-auto lg:hidden'>
-                                <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
+                                <button onClick={handleActiveNav} className="w-auto">
+                                    <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
+                                </button>
                             </div>
                         </div>
                     </div>
                     {/* mobile responsive navbar design */}
-                    <div className="w-full h-screen fixed top-0 left-0 bg-black/20">
-                        <div className="w-full h-screen py-6 fixed top-0 left-0 bg-white sm:w-[350px]">
+                    <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-linear duration-300' : '-left-[100%] ease-linear duration-300'}`}>
+                        <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[120%] ease-in-out duration-500'}`}>
                             <div className="w-full flex items-center justify-end pr-6">
-                                <IoMdClose className="text-3xl text-head-charleston-green"></IoMdClose>
+                                <button onClick={handleActiveNav} className="w-auto">
+                                    <IoMdClose className="text-3xl text-head-charleston-green"></IoMdClose>
+                                </button>
                             </div>
                             <div className="w-full mt-8">
                                 <nav className="w-full">
