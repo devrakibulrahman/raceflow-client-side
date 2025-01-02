@@ -1,9 +1,11 @@
 
 const MainLayout = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <div className="w-full h-screen bg-black">
+
+            </div>
+        </>
     );
 };
 
