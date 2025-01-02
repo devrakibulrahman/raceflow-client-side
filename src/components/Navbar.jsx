@@ -3,6 +3,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter, FaThreads } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { MdDarkMode } from "react-icons/md";
+import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import '../styles/custom.css';
 import light from '../assets/raceflow-light.png';
@@ -64,8 +65,12 @@ const Navbar = () => {
                                     <Link className="p-3 inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaThreads className="text-base text-head-charleston-green"></FaThreads></Link>
                                 </div>
                             </div>
-                            <div className="w-auto absolute bottom-12 right-6">
-                                <button><MdDarkMode  className="text-2xl"></MdDarkMode></button>
+                            <div className="w-auto absolute bottom-12 right-7 space-y-4">
+                                <button className="ml-[55px]"><MdDarkMode  className="text-xl"></MdDarkMode></button>
+                                <button className="flex items-center justify-center gap-2">
+                                    <span className="font-roboto text-base uppercase font-medium mt-[3px]">Login</span>
+                                    <FiLogIn className="text-lg"></FiLogIn>
+                                </button>
                             </div>
                         </div>
                     </div>
