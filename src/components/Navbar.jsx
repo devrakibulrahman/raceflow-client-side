@@ -48,8 +48,8 @@ const Navbar = () => {
                         </div>
                     </div>
                     {/* mobile responsive navbar design */}
-                    <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-linear duration-300' : '-left-[100%] ease-linear duration-300'}`}>
-                        <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[120%] ease-in-out duration-500'}`}>
+                    <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[100%] ease-in-out duration-500'}`}>
+                        <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-linear duration-700' : '-left-[100%] ease-out duration-300'}`}>
                             <div className="w-full flex items-center justify-end pr-6">
                                 <button onClick={handleActiveNav} className="w-auto">
                                     <IoMdClose className="text-3xl text-head-charleston-green"></IoMdClose>
@@ -65,7 +65,7 @@ const Navbar = () => {
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="w-full flex items-center justify-center gap-2 mt-[100px]">
+                            <div className="w-full flex items-center justify-center gap-2 mt-[50px]">
                                 <div className="w-auto">
                                     <Link className="p-3 inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaFacebookF className="text-base text-head-charleston-green"></FaFacebookF></Link>
                                 </div>
@@ -79,9 +79,9 @@ const Navbar = () => {
                                     <Link className="p-3 inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaThreads className="text-base text-head-charleston-green"></FaThreads></Link>
                                 </div>
                             </div>
-                            <div className="w-auto absolute bottom-12 right-7 space-y-4">
-                                <button className="ml-[55px]"><MdDarkMode  className="text-xl"></MdDarkMode></button>
-                                <button className="flex items-center justify-center gap-2">
+                            <div className="w-full flex flex-row-reverse items-center justify-between absolute bottom-12 left-0 px-6">
+                                <button className="w-auto"><MdDarkMode  className="text-xl"></MdDarkMode></button>
+                                <button className="w-auto flex items-center justify-center gap-2">
                                     <span className="font-roboto text-base uppercase font-medium mt-[3px]">Login</span>
                                     <FiLogIn className="text-lg"></FiLogIn>
                                 </button>
