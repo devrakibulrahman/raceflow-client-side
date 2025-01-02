@@ -2,7 +2,7 @@
 const MainLayout = () => {
     return (
         <>
-            <div className="w-full h-screen bg-black">
+            <div className="w-full h-screen flex flex-col items-center justify-center">
 
             </div>
         </>
