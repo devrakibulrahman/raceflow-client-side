@@ -9,6 +9,11 @@ export default {
       fontFamily:{
         "roboto": ["Roboto", "serif"]
       },
+      colors: {
+        "primary-yellow": '#f3e03b',
+        "secondary-orange": '#ff7800',
+        "para-gray": '#52525B',
+      },
     },
   },
   plugins: [],
