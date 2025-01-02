@@ -12,6 +12,7 @@ export default {
       colors: {
         "primary-yellow": '#f3e03b',
         "secondary-orange": '#ff7800',
+        "head-charleston-green": '#27272A',
         "para-gray": '#52525B',
       },
     },

@@ -13,8 +13,15 @@ const Navbar = () => {
                             <div className='w-auto'>
                                 <img src={light} alt="logo" className='w-[200px] h-full object-cover' />
                             </div>
-                            <div className='w-auto'>
-                                <IoMdMenu className="text-3xl"></IoMdMenu>
+                            <div className="w-auto">
+                                <nav className="w-auto">
+                                    <ul className="w-auto">
+                                        <li></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div className='w-auto md:hidden'>
+                                <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
                             </div>
                         </div>
                     </div>
