@@ -48,10 +48,13 @@ const LoginForm = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="w-full py-2 mt-3">
+                        <div className="w-full py-2 mt-3 flex items-center justify-between">
                             <div className="w-auto flex items-center gap-2">
                                 <input type="checkbox" />
                                 <p className="font-roboto text-head-charleston-green text-base font-medium ">Remember Me</p>
+                            </div>
+                            <div className="w-auto">
+                                <p className="font-roboto text-head-charleston-green text-base font-medium cursor-pointer transition ease-linear duration-200 hover:underline">Forgot Password?</p>
                             </div>
                         </div>
                     </div>
