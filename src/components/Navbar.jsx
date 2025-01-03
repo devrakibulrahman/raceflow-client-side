@@ -5,9 +5,9 @@ import { RiInstagramFill } from "react-icons/ri";
 import { MdDarkMode } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import '../styles/custom.css';
 import light from '../assets/raceflow-light.png';
-import { useState } from "react";
 
 const Navbar = () => {
 
@@ -23,8 +23,8 @@ const Navbar = () => {
         <>
             <header className='w-full py-8'>
                 <div className='w-full relative'>
+                    {/* desktop navbar design */}
                     <div className='container mx-auto px-4'>
-                        {/* desktop navbar design */}
                         <div className='w-full flex items-center justify-between'>
                             <div className='w-auto'>
                                 <img src={light} alt="logo" className='w-[200px] h-full object-cover' />
