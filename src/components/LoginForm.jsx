@@ -71,7 +71,7 @@ const LoginForm = () => {
                             </button>
                         </div>
                         <div className="w-full text-center mt-7">
-                            <p className="font-roboto text-base text-head-charleston-green uppercase font-medium">Don&apos;t have an Account? <Link className="underline">Register</Link></p>
+                            <p className="font-roboto text-base text-head-charleston-green uppercase font-medium">Don&apos;t have an Account? <Link to='/auth/register' className="underline">Register</Link></p>
                         </div>
                     </div>
                 </div>
