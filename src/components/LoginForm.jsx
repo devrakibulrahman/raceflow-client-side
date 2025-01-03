@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible  } from "react-icons/ai";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const LoginForm = () => {
+    
+    // state declare here ---->
+    const [showPassword, setShowPassword] = useState(false);
+
+    // event handle function declare here ---->
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <>
             <form className="w-full">
@@ -27,10 +37,10 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <div className="w-full pt-5">
-                        <div className="w-full flex items-center justify-between">
-                            <div className="w-[60px] border-b border-head-charleston-green transition ease-linear duration-200 sm:w-[170px] md:w-[200px] lg:w-[100px] xl:w-[130px]"></div>
-                            <p className="font-roboto text-sm text-head-charleston-green font-bold uppercase">Or Login With Google</p>
-                            <div className="w-[60px] border-b border-head-charleston-green transition ease-linear duration-200 sm:w-[170px] md:w-[200px] lg:w-[100px] xl:w-[130px]"></div>
+                        <div className="w-full flex items-center justify-between gap-x-3">
+                            <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
+                            <p className="font-roboto text-sm text-head-charleston-green font-bold uppercase">Or</p>
+                            <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
                         </div>
                         <div className="w-full mt-9">
                             <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-4">
