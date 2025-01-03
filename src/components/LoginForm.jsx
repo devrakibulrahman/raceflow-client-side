@@ -5,7 +5,45 @@ import { Link } from "react-router-dom";
 const LoginForm = () => {
     return (
         <>
-            
+            <form className="w-full">
+                <div className="w-full grid grid-cols-1 gap-4">
+                    <div className="w-full">
+                        <div className="w-full mb-3">
+                            <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug">Email</label>
+                        </div>
+                        <div className="w-full">
+                            <input type="text" placeholder="example@gmail.com" name="email" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                        </div>
+                    </div>
+                    <div className="w-full">
+                        <div className="w-full mb-3">
+                            <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug">Password</label>
+                        </div>
+                        <div className="w-full relative">
+                            <input type="text" placeholder="password" name="password" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                            <button className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+                                <AiFillEye className="text-2xl text-[#A1A1AA]"></AiFillEye>
+                            </button>
+                        </div>
+                    </div>
+                    <div className="w-full pt-5">
+                        <div className="w-full flex items-center justify-between">
+                            <div className="w-[120px] border-b border-head-charleston-green"></div>
+                            <p className="font-roboto text-base text-head-charleston-green font-bold uppercase">Or Login With Google</p>
+                            <div className="w-[120px] border-b border-head-charleston-green"></div>
+                        </div>
+                        <div className="w-full mt-9">
+                            <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-4">
+                                <FaGoogle className="text-xl text-head-charleston-green"></FaGoogle>
+                                <span className="font-roboto text-base text-head-charleston-green font-bold uppercase">Log in Google</span>
+                            </button>
+                        </div>
+                        <div className="w-full text-center mt-7">
+                            <p className="font-roboto text-base text-head-charleston-green uppercase font-medium">Don&apos;t have an Account? <Link className="underline">Register</Link></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </>
     );
 };
