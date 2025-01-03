@@ -36,7 +36,7 @@ const LoginForm = () => {
                                 <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug">Password</label>
                             </div>
                             <div className="w-full relative">
-                                <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                                <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" autoComplete="off" className="w-full py-4 pl-4 pr-[55px] font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
                                 <button onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
                                     {
                                         showPassword
@@ -59,12 +59,17 @@ const LoginForm = () => {
                         </div>
                     </div>
                     <div className="w-full">
+                        <button className="w-full p-4 border border-head-charleston-green bg-head-charleston-green flex items-center justify-center gap-3 transition ease-linear duration-200 group hover:bg-white">
+                            <span className="font-roboto text-base text-primary-yellow font-bold uppercase group-hover:text-head-charleston-green">Login</span>
+                        </button>
+                    </div>
+                    <div className="w-full">
                         <div className="w-full flex items-center justify-between gap-x-3">
                             <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
                             <p className="font-roboto text-sm text-head-charleston-green font-bold uppercase">Or</p>
                             <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
                         </div>
-                        <div className="w-full mt-9">
+                        <div className="w-full mt-3">
                             <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-3 transition ease-linear duration-200 group hover:bg-head-charleston-green">
                                 <FaGoogle className="text-xl text-head-charleston-green group-hover:text-primary-yellow"></FaGoogle>
                                 <span className="font-roboto text-base text-head-charleston-green font-bold uppercase group-hover:text-primary-yellow">Log in Google</span>
