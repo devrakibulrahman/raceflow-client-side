@@ -28,9 +28,9 @@ const LoginForm = () => {
                     </div>
                     <div className="w-full pt-5">
                         <div className="w-full flex items-center justify-between">
-                            <div className="w-[120px] border-b border-head-charleston-green"></div>
-                            <p className="font-roboto text-base text-head-charleston-green font-bold uppercase">Or Login With Google</p>
-                            <div className="w-[120px] border-b border-head-charleston-green"></div>
+                            <div className="w-[60px] border-b border-head-charleston-green transition ease-linear duration-200 sm:w-[170px] md:w-[200px] lg:w-[100px] xl:w-[130px]"></div>
+                            <p className="font-roboto text-sm text-head-charleston-green font-bold uppercase">Or Login With Google</p>
+                            <div className="w-[60px] border-b border-head-charleston-green transition ease-linear duration-200 sm:w-[170px] md:w-[200px] lg:w-[100px] xl:w-[130px]"></div>
                         </div>
                         <div className="w-full mt-9">
                             <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-4">

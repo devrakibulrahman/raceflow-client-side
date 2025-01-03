@@ -1,6 +1,16 @@
+import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
+
+    // state declare here ---->
+    const [showPassword, setShowPassword] = useState(false);
+
+    // event handle function declare here ---->
+    const handleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <>
             <div className="w-full">
