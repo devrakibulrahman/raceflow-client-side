@@ -32,7 +32,13 @@ const LoginForm = () => {
                         <div className="w-full relative">
                             <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
                             <button onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
-                                <AiFillEye className="text-2xl text-[#A1A1AA]"></AiFillEye>
+                                {
+                                    showPassword
+                                    ?
+                                        <AiFillEyeInvisible className="text-2xl text-[#A1A1AA]"></AiFillEyeInvisible>
+                                    :
+                                        <AiFillEye className="text-2xl text-[#A1A1AA]"></AiFillEye>
+                                }
                             </button>
                         </div>
                     </div>
