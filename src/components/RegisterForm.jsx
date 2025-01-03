@@ -38,7 +38,7 @@ const RegisterForm = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex flex-col items-center justify-center gap-4 lg:flex-row">
+                    <div className="w-full space-y-4">
                         <div className="w-full">
                             <div className="w-full mb-3">
                                 <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug">Email</label>
