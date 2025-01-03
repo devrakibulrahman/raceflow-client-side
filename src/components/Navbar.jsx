@@ -88,7 +88,7 @@ const Navbar = () => {
                         </div>
                         <div className="w-full flex flex-row-reverse items-center justify-between absolute bottom-12 left-0 px-6">
                             <button className="w-auto"><MdDarkMode  className="text-xl"></MdDarkMode></button>
-                            <button className="w-auto flex items-center justify-center gap-2">
+                            <button onClick={handleLogin} className="w-auto flex items-center justify-center gap-2">
                                 <span className="font-roboto text-base uppercase font-medium mt-[3px]">Login</span>
                                 <FiLogIn className="text-lg"></FiLogIn>
                             </button>
