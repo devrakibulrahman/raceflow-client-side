@@ -18,6 +18,7 @@ export default {
       backgroundImage: {
         "login": 'url(/img/login.png)',
         "register": 'url(/img/register.png)',
+        "contact": 'url(/img/contact.png)',
         "pattern": 'url(/pattern.png)',
       },
     },
