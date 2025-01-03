@@ -65,9 +65,9 @@ const LoginForm = () => {
                             <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
                         </div>
                         <div className="w-full mt-9">
-                            <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-4">
-                                <FaGoogle className="text-xl text-head-charleston-green"></FaGoogle>
-                                <span className="font-roboto text-base text-head-charleston-green font-bold uppercase">Log in Google</span>
+                            <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-3 transition ease-linear duration-200 group hover:bg-head-charleston-green">
+                                <FaGoogle className="text-xl text-head-charleston-green group-hover:text-primary-yellow"></FaGoogle>
+                                <span className="font-roboto text-base text-head-charleston-green font-bold uppercase group-hover:text-primary-yellow">Log in Google</span>
                             </button>
                         </div>
                         <div className="w-full text-center mt-7">
