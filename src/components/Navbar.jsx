@@ -4,7 +4,7 @@ import { FaXTwitter, FaThreads } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { MdDarkMode } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import light from '../assets/raceflow-light.png';
 
@@ -15,6 +15,7 @@ const Navbar = () => {
 
     // hooks declare here ---->
     const navigate = useNavigate();
+    const location = useLocation();
 
     // event handle declare here ---->
     const handleActiveNav = () => {
