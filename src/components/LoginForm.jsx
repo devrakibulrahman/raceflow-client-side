@@ -13,6 +13,11 @@ const LoginForm = () => {
         setShowPassword(!showPassword);
     };
 
+    // form submit function declare here ----> 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+    };
+
     return (
         <>
             <form className="w-full">
