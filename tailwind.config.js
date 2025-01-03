@@ -16,7 +16,7 @@ export default {
         "para-gray": '#52525B',
       },
       backgroundImage: {
-        "login": 'url(./img/login.jpg)',
+        "login": 'url(/img/login.png)',
       },
     },
   },
