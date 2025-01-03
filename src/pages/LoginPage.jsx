@@ -1,3 +1,4 @@
+import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
     return (
@@ -17,12 +18,12 @@ const LoginPage = () => {
                                 </div>
                             </div>
                             <div className="w-full h-[350px] bg-pattern bg-cover bg-center bg-no-repeat relative md:min-h-full">
-                                <div className="w-full h-full absolute top-0 left-0 bg-white/90 p-6">
+                                <div className="w-full h-full absolute top-0 left-0 bg-white/95 p-6">
                                     <div className="w-full">
                                         <h3 className="font-roboto text-head-charleston-green text-3xl font-bold uppercase">Login</h3>
                                     </div>
-                                    <div className="w-full">
-                                        
+                                    <div className="w-full mt-7">
+                                        <LoginForm></LoginForm>
                                     </div>
                                 </div>
                             </div>
