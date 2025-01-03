@@ -55,7 +55,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 {/* mobile responsive navbar design */}
-                <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[100%] ease-in-out duration-500'}`}>
+                <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[100%] ease-in-out duration-500'} z-50`}>
                     <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-linear duration-700' : '-left-[100%] ease-out duration-300'}`}>
                         <div className="w-full flex items-center justify-end pr-6">
                             <button onClick={handleActiveNav} className="w-auto">
