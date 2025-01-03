@@ -23,7 +23,7 @@ input[type="checkbox"]{
   outline: none;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"]:checked{
   background-color: #27272a;
   transition: all ease-in-out 0.2s;
 }
@@ -33,6 +33,7 @@ input[type="checkbox"]::after{
   content: "\f00c";
   font-weight: 900;
   font-size: .6rem;
+  color: white;
   display: none;
   transition: all ease-in-out 0.2s;
 }
