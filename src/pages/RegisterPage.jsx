@@ -1,3 +1,4 @@
+import RegisterForm from "../components/RegisterForm";
 
 const RegisterPage = () => {
     return (
@@ -21,7 +22,7 @@ const RegisterPage = () => {
                                     <h3 className="font-roboto text-head-charleston-green text-3xl font-bold uppercase">Register</h3>
                                 </div>
                                 <div className="w-full mt-7">
-                                    
+                                    <RegisterForm></RegisterForm>
                                 </div>
                             </div>
                         </div>
