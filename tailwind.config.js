@@ -15,6 +15,9 @@ export default {
         "head-charleston-green": '#27272A',
         "para-gray": '#52525B',
       },
+      backgroundImage: {
+        "login": 'url(./img/login.jpg)',
+      },
     },
   },
   plugins: [],
