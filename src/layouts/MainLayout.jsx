@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import '../styles/custom.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SubFooter from "../components/SubFooter";
 
 const MainLayout = () => {
 
@@ -18,7 +19,13 @@ const MainLayout = () => {
                     <Outlet></Outlet>
                 </div>
                 <div className="w-full mt-auto">
-                    <Footer></Footer>
+                    {
+                        location?.pathname === '/auth/login' || location?.pathname === '/auth/register'
+                        ?
+                            <SubFooter></SubFooter>
+                        :
+                            <Footer></Footer>
+                    }
                 </div>
             </div>
         </>
