@@ -20,7 +20,7 @@ const LoginForm = () => {
 
     return (
         <>
-            <form className="w-full">
+            <form onSubmit={handleFormSubmit} className="w-full">
                 <div className="w-full grid grid-cols-1 gap-4">
                     <div className="w-full">
                         <div className="w-full mb-3">
