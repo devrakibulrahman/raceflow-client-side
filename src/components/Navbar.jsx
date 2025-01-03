@@ -38,10 +38,10 @@ const Navbar = () => {
                             <div className="w-auto hidden lg:block">
                                 <nav className="w-auto">
                                     <ul className="w-auto flex items-center justify-center gap-2">
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 bg-primary-yellow">Home</NavLink></li>
+                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/' className="py-2 px-4 bg-primary-yellow">Home</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">About Us</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/contact' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/auth/login' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Login</NavLink></li>
                                     </ul>
                                 </nav>
