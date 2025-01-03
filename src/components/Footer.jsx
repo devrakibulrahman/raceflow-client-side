@@ -47,12 +47,12 @@ const Footer = () => {
                                     </div>
                                     <nav className='w-full mt-3 xl:mt-4'>
                                         <ul className='w-auto space-y-2'>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Race Details</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Event Registration</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Event Schedule</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Medals & Awards</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Buy Tickets</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 hover:text-primary-yellow'><Link>Participant Guide</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Race Details</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Event Registration</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Event Schedule</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Medals & Awards</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Buy Tickets</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transition ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Participant Guide</Link></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -62,12 +62,12 @@ const Footer = () => {
                                     </div>
                                     <nav className='w-full mt-3 xl:mt-4'>
                                         <ul className='w-auto space-y-2'>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>Contact Support</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>FAQ</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>Race Regulations</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>Safety Tips</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>Volunteer Info</Link></li>
-                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 hover:text-primary-yellow'><Link>Blog & News</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Contact Support</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>FAQ</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Race Regulations</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Safety Tips</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Volunteer Info</Link></li>
+                                            <li className='font-roboto text-base text-para-gray font-medium transtiion ease-linear duration-200 cursor-pointer hover:text-primary-yellow'><Link>Blog & News</Link></li>
                                         </ul>
                                     </nav>
                                 </div>
