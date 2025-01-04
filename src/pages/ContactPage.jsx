@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MdEmail, MdKeyboardArrowRight } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
+import ContactForm from "../components/ContactForm";
 
 const ContactPage = () => {
     return (
@@ -63,7 +64,7 @@ const ContactPage = () => {
                             </div>
                             <div className="w-full min-h-[490px] bg-pattern bg-cover bg-center bg-no-repeat lg:h-full">
                                 <div className="w-full">
-
+                                    <ContactForm></ContactForm>
                                 </div>
                             </div>
                         </div>
