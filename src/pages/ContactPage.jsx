@@ -40,7 +40,7 @@ const ContactPage = () => {
                         <div className="w-full min-h-[550px] mt-16 grid grid-cols-1 gap-10 lg:mt-26 lg:grid-cols-2">
                             <div className="w-full h-[390px] bg-contact-form-img bg-cover bg-center bg-no-repeat p-7 md:flex md:items-end md:justify-end md:h-[490px] lg:h-full">
                                 <div className="w-full h-full bg-primary-yellow p-6 flex items-center justify-between flex-col gap-5 md:w-[350px] md:max-h-[210px]">
-                                    <div className="w-full flex flex-col items-center md:flex-row md:justify-between">
+                                    <div className="w-full flex flex-col items-center transition-all ease-linear duration-200 md:flex-row md:justify-between">
                                         <div className="w-[55px] h-[55px] bg-head-charleston-green flex items-center justify-center">
                                             <FaPhoneAlt className='text-lg text-primary-yellow'></FaPhoneAlt>
                                         </div>
@@ -50,7 +50,7 @@ const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="w-full border-b border-head-charleston-green"></div>
-                                    <div className="w-full flex flex-col items-center md:flex-row md:justify-between">
+                                    <div className="w-full flex flex-col items-center transition-all ease-linear duration-200 md:flex-row md:justify-between">
                                         <div className="w-[55px] h-[55px] bg-head-charleston-green flex items-center justify-center">
                                             <MdEmail className='text-xl text-primary-yellow'></MdEmail>
                                         </div>
@@ -62,7 +62,9 @@ const ContactPage = () => {
                                 </div>
                             </div>
                             <div className="w-full min-h-[490px] bg-pattern bg-cover bg-center bg-no-repeat lg:h-full">
+                                <div className="w-full">
 
+                                </div>
                             </div>
                         </div>
                     </div>
