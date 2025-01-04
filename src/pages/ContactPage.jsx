@@ -34,6 +34,11 @@ const ContactPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="w-full">
+                    <div className="container mx-auto px-4">
+
+                    </div>
+                </div>
             </div>
         </>
     );
