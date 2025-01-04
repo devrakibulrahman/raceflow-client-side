@@ -28,7 +28,7 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='w-full absolute top-0 left-0'>
+            <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? '' : 'absolute top-0 left-0'}`}>
                 {/* desktop navbar design */}
                 <div className='w-full min-h-[92px] py-8'>
                     <div className='container mx-auto px-4'>
