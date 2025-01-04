@@ -37,8 +37,10 @@ const ContactPage = () => {
                 <div className="w-full">
                     <div className="w-full max-w-[1120px] mx-auto px-4">
                         <div className="w-full min-h-[550px] mt-16 grid grid-cols-1 gap-10 lg:mt-26 lg:grid-cols-2">
-                            <div className="w-full h-[490px] bg-contact-form-img bg-cover bg-center bg-no-repeat lg:h-full">
-                                
+                            <div className="w-full h-[390px] bg-contact-form-img bg-cover bg-center bg-no-repeat p-7 md:flex md:items-end md:justify-end md:h-[490px] lg:h-full">
+                                <div className="w-full h-full bg-white md:w-[350px] md:max-h-[210px]">
+
+                                </div>
                             </div>
                             <div className="w-full min-h-[490px] bg-pattern bg-cover bg-center bg-no-repeat lg:h-full">
 
