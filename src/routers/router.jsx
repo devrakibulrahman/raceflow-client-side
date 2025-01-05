@@ -8,6 +8,7 @@ import ContactPage from "../pages/ContactPage";
 import MarathonPage from "../pages/MarathonPage";
 import ErrorPage from "../pages/ErrorPage";
 import AboutPage from "../pages/AboutPage";
+import DetailsPage from "../pages/DetailsPage";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <ContactPage></ContactPage>
+            },
+            {
+                path: '/marathon_details/:id',
+                element: <DetailsPage></DetailsPage>,
             },
             {
                 path: '/auth',
