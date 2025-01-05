@@ -85,7 +85,7 @@ const DetailsPage = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="w-full min-h-[250px] bg-gradient-to-r from-primary-yellow to-secondary-orange/80">
+            <div className="w-full min-h-[250px] bg-gradient-to-r from-primary-yellow to-secondary-orange/80">
                 <div className="w-full min-h-[250px] bg-sub-pattern bg-center bg-cover bg-no-repeat py-10 flex items-center justify-center">
                     <div className="container mx-auto px-4">
                         <div className="w-full flex items-center flex-col gap-5 xl:flex-row xl:justify-between">
@@ -98,7 +98,7 @@ const DetailsPage = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </>
     );
 };
