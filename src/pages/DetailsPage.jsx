@@ -44,14 +44,23 @@ const DetailsPage = () => {
                     <div className="w-full">
                         <div className="container mx-auto px-4">
                             <div className="w-full grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-                                <div className="w-full min-h-[280px] bg-blue-400">
-
+                                <div className="w-full min-h-[280px] bg-tips1 bg-cover bg-top bg-no-repeat p-5 flex items-end">
+                                    <div className="w-full">
+                                        <h3 className="font-roboto text-base text-primary-yellow font-bold uppercase tracking-widest mb-2">Fuel Properly</h3>
+                                        <p className="font-roboto text-base text-white font-normal">Eat balanced meals and maintain proper hydration to stay energized.</p>
+                                    </div>
                                 </div>
-                                <div className="w-full min-h-[280px] bg-blue-400">
-
+                                <div className="w-full min-h-[280px] bg-tips2 bg-cover bg-top bg-no-repeat p-5 flex items-end">
+                                    <div className="w-full">
+                                        <h3 className="font-roboto text-base text-primary-yellow font-bold uppercase tracking-widest mb-2">Train Consistently</h3>
+                                        <p className="font-roboto text-base text-white font-normal">Build your endurance gradually with a consistent training plan.</p>
+                                    </div>
                                 </div>
-                                <div className="w-full min-h-[280px] bg-blue-400">
-
+                                <div className="w-full min-h-[280px] bg-tips3 bg-cover bg-top bg-no-repeat p-5 flex items-end">
+                                    <div className="w-full">
+                                        <h3 className="font-roboto text-base text-primary-yellow font-bold uppercase tracking-widest mb-2">Start Slow</h3>
+                                        <p className="font-roboto text-base text-white font-normal">Avoid starting too fast, as it can lead to early fatigue.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
