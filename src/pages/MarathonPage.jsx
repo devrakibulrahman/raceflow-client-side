@@ -45,7 +45,7 @@ const MarathonPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat py-16 lg:py-26">
+            <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat py-16 lg:py-24">
                 <div className="container mx-auto px-4">
                     <div className="w-full min-h-[500px] text-center flex flex-col items-center justify-center gap-5">
                         <div className="w-full">
