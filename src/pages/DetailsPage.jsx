@@ -1,4 +1,7 @@
+import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaThreads, FaXTwitter } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { RiInstagramFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const DetailsPage = () => {
@@ -28,7 +31,7 @@ const DetailsPage = () => {
                         </div>
                         <div className="w-full min-h-[400px] grid grid-cols-1 gap-6">
                             <div className="w-full min-h-[200px] bg-slate-50 overflow-hidden">
-                                <div className="w-full min-h-[225px] bg-left-column1-img bg-cover bg-top bg-no-repeat"></div>
+                                <div className="w-full min-h-[225px] bg-left-column1-img bg-cover bg-top bg-no-repeat md:min-h-[400px] lg:min-h-[225px]"></div>
                                 <div className="w-full min-h-[100px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
                                     <h3 className="font-roboto text-base text-para-gray font-normal">Marathon</h3>
                                     <div className="w-full mt-2 space-y-2">
@@ -37,11 +40,32 @@ const DetailsPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-full min-h-[250px] bg-red-300">
-
-                            </div>
-                            <div className="w-full min-h-[250px] bg-red-300">
-
+                            <div className="w-full min-h-[100px] bg-slate-50">
+                                <div className="w-full min-h-[100px] bg-pattern bg-cover bg-center bg-no-repeat overflow-hidden p-5">
+                                    <h3 className="font-roboto text-lg font-bold uppercase text-head-charleston-green">Follow Us</h3>
+                                    <div className="w-full pt-2 border-t border-slate-200 mt-5">
+                                        <div className='w-full flex items-center justify-center flex-wrap gap-2 mt-[18px]'>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaFacebookF className="text-base text-head-charleston-green"></FaFacebookF></Link>
+                                            </div>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><RiInstagramFill className="text-base text-head-charleston-green"></RiInstagramFill></Link>
+                                            </div>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaXTwitter className="text-base text-head-charleston-green"></FaXTwitter></Link>
+                                            </div>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaThreads className="text-base text-head-charleston-green"></FaThreads></Link>
+                                            </div>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaLinkedinIn className="text-base text-head-charleston-green"></FaLinkedinIn></Link>
+                                            </div>
+                                            <div className="w-auto">
+                                                <Link className="p-[10px] inline-block border-2 border-head-charleston-green rounded-full transition ease-linear duration-200 hover:bg-primary-yellow hover:border-primary-yellow group"><FaDiscord className="text-base text-head-charleston-green"></FaDiscord></Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
