@@ -28,7 +28,7 @@ const DetailsPage = () => {
                         </div>
                         <div className="w-full min-h-[400px] grid grid-cols-1 gap-6">
                             <div className="w-full min-h-[200px] bg-slate-50 overflow-hidden">
-                                <div className="w-full min-h-[225px] bg-slate-400"></div>
+                                <div className="w-full min-h-[225px] bg-left-column1-img bg-cover bg-top bg-no-repeat"></div>
                                 <div className="w-full min-h-[100px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
                                     <h3 className="font-roboto text-base text-para-gray font-normal">Marathon</h3>
                                     <div className="w-full mt-2 space-y-2">
