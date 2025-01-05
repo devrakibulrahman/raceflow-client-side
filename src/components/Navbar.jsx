@@ -40,7 +40,7 @@ const Navbar = () => {
                                 <nav className="w-auto">
                                     <ul className="w-auto flex items-center justify-center gap-2">
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/' className="py-2 px-4 bg-primary-yellow">Home</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">About Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/about_us' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">About Us</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/marathons' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Marathons</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/contact' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
@@ -67,10 +67,11 @@ const Navbar = () => {
                         <div className="w-full mt-8">
                             <nav className="w-full">
                                 <ul className="w-full space-y-3">
-                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 bg-primary-yellow"><NavLink>Home</NavLink></li>
-                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink>About Us</NavLink></li>
+                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 bg-primary-yellow"><NavLink to='/'>Home</NavLink></li>
+                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/about_us'>About Us</NavLink></li>
+                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/marathons'>Marathons</NavLink></li>
                                     <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink>Dashboard</NavLink></li>
-                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink>Contact Us</NavLink></li>
+                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/contact'>Contact Us</NavLink></li>
                                 </ul>
                             </nav>
                         </div>
