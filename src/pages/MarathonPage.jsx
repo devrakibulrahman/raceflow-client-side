@@ -64,8 +64,17 @@ const MarathonPage = () => {
                 </div>
             </div>
             <div className="w-full min-h-[250px] bg-gradient-to-r from-primary-yellow to-secondary-orange/80">
-                <div className="w-full min-h-[250px] bg-sub-pattern bg-center bg-cover bg-no-repeat">
-                    
+                <div className="w-full min-h-[250px] bg-sub-pattern bg-center bg-cover bg-no-repeat py-10 flex items-center justify-center">
+                    <div className="container mx-auto px-4">
+                        <div className="w-full flex items-center flex-col gap-5 xl:flex-row xl:justify-between">
+                            <div className="w-auto max-w-[500px] xl:max-w-full">
+                                <h1 className="font-roboto text-head-charleston-green text-[32px] font-black uppercase text-center transition-all ease-linear duration-200 xl:text-[38px] xl:text-left">Subscribe To Our <span className="text-primary-yellow bg-head-charleston-green py-2">Marathon</span> Newsletter!</h1>
+                            </div>
+                            <div className="w-auto">
+                                <button className="font-roboto text-head-charleston-green font-medium tracking-widest py-3 px-6 uppercase bg-white transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
