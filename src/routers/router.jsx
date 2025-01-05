@@ -5,6 +5,7 @@ import Auth from "../pages/auth/Auth";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import ContactPage from "../pages/ContactPage";
+import MarathonPage from "../pages/MarathonPage";
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/marathon',
+                element: <MarathonPage></MarathonPage>
             },
             {
                 path: '/contact',
