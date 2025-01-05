@@ -12,19 +12,35 @@ const MainLayout = () => {
     return (
         <>
             <div className="w-full h-screen flex flex-col items-center">
-                <div className="w-full">
-                    <Header></Header>
-                </div>
+                {
+                    location.pathname === '/' || location.pathname === '/about_us' || 
+                    location.pathname === '/contact' || location.pathname === '/marathons' ||
+                    location.pathname === '/auth/login' || location.pathname === '/auth/register'
+                    ?
+                        <div className="w-full">
+                            <Header></Header>
+                        </div>
+                    :
+                        ''
+                }
                 <div className="w-full">
                     <Outlet></Outlet>
                 </div>
                 <div className="w-full mt-auto">
                     {
-                        location?.pathname === '/auth/login' || location?.pathname === '/auth/register'
+                        location.pathname === '/' || location.pathname === '/about_us' || 
+                        location.pathname === '/marathons' || location.pathname === '/auth/login' || 
+                        location.pathname === '/auth/register' || location.pathname === '/contact'
                         ?
-                            <SubFooter></SubFooter>
+                            (
+                                location?.pathname === '/auth/login' || location?.pathname === '/auth/register'
+                                ?
+                                    <SubFooter></SubFooter>
+                                :
+                                    <Footer></Footer>
+                            )
                         :
-                            <Footer></Footer>
+                            ''
                     }
                 </div>
             </div>
