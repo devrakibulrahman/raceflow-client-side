@@ -45,8 +45,23 @@ const MarathonPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat">
-                
+            <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat py-16 lg:py-26">
+                <div className="container mx-auto px-4">
+                    <div className="w-full min-h-[500px] text-center flex flex-col items-center justify-center gap-5">
+                        <div className="w-full">
+                            <p className="font-roboto text-white text-sm font-bold uppercase tracking-widest">Get Started</p>
+                        </div>
+                        <div className="w-full max-w-[1000px]">
+                            <h1 className="font-roboto text-[40px] font-bold text-white uppercase transition-all ease-linear duration-200 leading-tight md:text-[50px] xl:text-[70px]">Register Now Secure Your Spot in the <span className="text-head-charleston-green bg-primary-yellow">Marathon!</span></h1>
+                        </div>
+                        <div className="w-full max-w-[800px]">
+                            <p className="font-roboto text-xl font-normal text-white transition-all ease-linear duration-200 md:text-[22px]">Register today for a seamless marathon experience. Choose your race category, receive important details, and join us for an unforgettable race day!</p>
+                        </div>
+                        <div className="w-full flex items-center justify-center mt-3">
+                            <button className="font-roboto text-head-charleston-green font-medium tracking-widest py-3 px-6 uppercase bg-primary-yellow transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Register Now!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
