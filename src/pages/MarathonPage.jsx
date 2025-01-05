@@ -18,7 +18,8 @@ const MarathonPage = () => {
                         </div>
                     </div>
                 </div>
-            </div><div className="w-full min-h-[500px] bg-white py-16 lg:py-24">
+            </div>
+            <div className="w-full min-h-[500px] bg-white py-16 lg:py-24">
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full text-center">
@@ -43,6 +44,9 @@ const MarathonPage = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat">
+                
             </div>
         </>
     );
