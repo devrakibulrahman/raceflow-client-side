@@ -38,6 +38,8 @@ const MarathonPage = () => {
                     <div className="container mx-auto px-4">
                         <div className="w-full min-h-[500px] mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                             <MarathonsCard></MarathonsCard>
+                            <MarathonsCard></MarathonsCard>
+                            <MarathonsCard></MarathonsCard>
                         </div>
                     </div>
                 </div>
