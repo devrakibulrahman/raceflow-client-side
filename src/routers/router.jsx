@@ -17,7 +17,7 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/marathon',
+                path: '/marathons',
                 element: <MarathonPage></MarathonPage>
             },
             {
