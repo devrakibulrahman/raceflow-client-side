@@ -18,6 +18,18 @@ const DetailsPage = () => {
                     </div>
                 </div>
             </div>
+            <div className="w-full min-h-[500px] py-16 lg:py-24">
+                <div className="w-full max-w-[1120px] mx-auto px-4">
+                    <div className="w-full min-h-[500px] grid grid-cols-1 gap-6 lg:grid-cols-3 ">
+                        <div className="w-full min-h-[400px] bg-blue-500 lg:col-span-2">
+                            
+                        </div>
+                        <div className="w-full min-h-[400px] bg-blue-500">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };
