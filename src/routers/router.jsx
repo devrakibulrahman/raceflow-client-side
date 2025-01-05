@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ContactPage from "../pages/ContactPage";
 import MarathonPage from "../pages/MarathonPage";
 import ErrorPage from "../pages/ErrorPage";
+import AboutPage from "../pages/AboutPage";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/about_us',
+                element: <AboutPage></AboutPage>
             },
             {
                 path: '/marathons',
