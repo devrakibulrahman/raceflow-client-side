@@ -23,6 +23,7 @@ export default {
         "registration": 'url(/img/registration.png)',
         "contact-form-img": 'url(/img/contact-form-img.png)',
         "pattern": 'url(/pattern.png)',
+        "sub-pattern": 'url(/subscribe-pattern.png)'
       },
     },
   },
