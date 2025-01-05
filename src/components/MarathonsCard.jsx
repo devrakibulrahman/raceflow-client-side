@@ -1,12 +1,13 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import img from "../assets/img/card.jpg";
 
 const MarathonsCard = () => {
     return (
         <>
             <div className="w-full min-h-[450px] bg-slate-50">
                 <div className="w-full h-[225px] bg-blue-300">
-
+                    <img src={img} alt="marathon image" className="w-full h-full object-cover" />
                 </div>
                 <div className="w-full min-h-[225px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
                     <div className="w-full">
