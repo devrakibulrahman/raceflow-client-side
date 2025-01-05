@@ -6,11 +6,13 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import ContactPage from "../pages/ContactPage";
 import MarathonPage from "../pages/MarathonPage";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
                     }
                 ],
             },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
+            }
         ],
     },
 ]);
