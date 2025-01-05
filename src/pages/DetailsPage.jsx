@@ -20,12 +20,29 @@ const DetailsPage = () => {
             </div>
             <div className="w-full min-h-[500px] py-16 lg:py-24">
                 <div className="w-full max-w-[1150px] mx-auto px-4">
-                    <div className="w-full min-h-[500px] grid grid-cols-1 gap-6 lg:grid-cols-3 ">
-                        <div className="w-full min-h-[400px] bg-blue-500 lg:col-span-2">
+                    <div className="w-full min-h-[500px] grid grid-cols-1 gap-10 lg:grid-cols-3">
+                        <div className="w-full min-h-[400px] lg:col-span-2">
+                            <div className="w-full min-h-[400px] bg-blue-500">
 
+                            </div>
                         </div>
-                        <div className="w-full min-h-[400px] bg-blue-500">
+                        <div className="w-full min-h-[400px] grid grid-cols-1 gap-6">
+                            <div className="w-full min-h-[200px] bg-slate-50 overflow-hidden">
+                                <div className="w-full min-h-[225px] bg-slate-400"></div>
+                                <div className="w-full min-h-[100px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
+                                    <h3 className="font-roboto text-base text-para-gray font-normal">Marathon</h3>
+                                    <div className="w-full mt-2 space-y-2">
+                                        <h1 className="font-roboto text-[21px] text-head-charleston-green font-bold leading-tight uppercase">Why People Join Marathons?</h1>
+                                        <p className="font-roboto text-base text-para-gray font-normal">To challenge oneself, improve fitness, achieve personal goals, and contribute to a sense of community and accomplishment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full min-h-[250px] bg-red-300">
 
+                            </div>
+                            <div className="w-full min-h-[250px] bg-red-300">
+
+                            </div>
                         </div>
                     </div>
                 </div>
