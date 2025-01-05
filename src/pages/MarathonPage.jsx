@@ -55,12 +55,17 @@ const MarathonPage = () => {
                             <h1 className="font-roboto text-[40px] font-bold text-white uppercase transition-all ease-linear duration-200 leading-tight md:text-[50px] xl:text-[70px]">Register Now Secure Your Spot in the <span className="text-head-charleston-green bg-primary-yellow">Marathon!</span></h1>
                         </div>
                         <div className="w-full max-w-[800px]">
-                            <p className="font-roboto text-xl font-normal text-white transition-all ease-linear duration-200 md:text-[22px]">Register today for a seamless marathon experience. Choose your race category, receive important details, and join us for an unforgettable race day!</p>
+                            <p className="font-roboto text-xl font-normal text-white transition-all ease-linear duration-200 leading-relaxed md:text-[22px]">Register today for a seamless marathon experience. Choose your race category, receive important details, and join us for an unforgettable race day!</p>
                         </div>
                         <div className="w-full flex items-center justify-center mt-3">
                             <button className="font-roboto text-head-charleston-green font-medium tracking-widest py-3 px-6 uppercase bg-primary-yellow transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Register Now!</button>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="w-full min-h-[250px] bg-gradient-to-r from-primary-yellow to-secondary-orange/80">
+                <div className="w-full min-h-[250px] bg-pattern bg-top bg-no-repeat">
+
                 </div>
             </div>
         </>
