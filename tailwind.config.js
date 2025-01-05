@@ -22,6 +22,7 @@ export default {
         "marathon": 'url(/img/marathon.png)',
         "about": 'url(/img/about.png)',
         "details": 'url(/img/details.png)',
+        "left-column1-img": 'url(/img/details-left-column-img.png)',
         "tips1": 'url(/img/tips1.png)',
         "tips2": 'url(/img/tips2.png)',
         "tips3": 'url(/img/tips3.png)',
