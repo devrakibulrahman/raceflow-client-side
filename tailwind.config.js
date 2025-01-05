@@ -20,6 +20,7 @@ export default {
         "register": 'url(/img/register.png)',
         "contact": 'url(/img/contact.png)',
         "marathon": 'url(/img/marathon.png)',
+        "registration": 'url(/img/registration.png)',
         "contact-form-img": 'url(/img/contact-form-img.png)',
         "pattern": 'url(/pattern.png)',
       },
