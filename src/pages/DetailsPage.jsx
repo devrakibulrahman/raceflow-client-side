@@ -19,13 +19,41 @@ const DetailsPage = () => {
                 </div>
             </div>
             <div className="w-full min-h-[500px] py-16 lg:py-24">
-                <div className="w-full max-w-[1120px] mx-auto px-4">
+                <div className="w-full max-w-[1150px] mx-auto px-4">
                     <div className="w-full min-h-[500px] grid grid-cols-1 gap-6 lg:grid-cols-3 ">
                         <div className="w-full min-h-[400px] bg-blue-500 lg:col-span-2">
-                            
+
                         </div>
                         <div className="w-full min-h-[400px] bg-blue-500">
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full min-h-[500px] py-10">
+                <div className="w-full">
+                    <div className="container mx-auto px-4">
+                        <div className="w-full">
+                            <div className="w-full pb-6 border-b border-slate-200">
+                                <h1 className="font-roboto text-[32px] font-bold text-head-charleston-green uppercase transition-all ease-linear duration-200 md:text-[38px] xl:text-[50px]">Marathon <span className="bg-primary-yellow">Tip&apos;s</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="w-full mt-10">
+                    <div className="w-full">
+                        <div className="container mx-auto px-4">
+                            <div className="w-full grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                                <div className="w-full min-h-[280px] bg-blue-400">
+
+                                </div>
+                                <div className="w-full min-h-[280px] bg-blue-400">
+
+                                </div>
+                                <div className="w-full min-h-[280px] bg-blue-400">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
