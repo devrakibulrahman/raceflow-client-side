@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import '../styles/custom.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -8,6 +8,7 @@ const MainLayout = () => {
 
     // hooks declare here ---->
     const location = useLocation();
+    const params = useParams();
 
     return (
         <>
@@ -15,7 +16,8 @@ const MainLayout = () => {
                 {
                     location.pathname === '/' || location.pathname === '/about_us' || 
                     location.pathname === '/contact' || location.pathname === '/marathons' ||
-                    location.pathname === '/auth/login' || location.pathname === '/auth/register'
+                    location.pathname === '/auth/login' || location.pathname === '/auth/register' ||
+                    location.pathname === `/marathon_details/${params.id}`
                     ?
                         <div className="w-full">
                             <Header></Header>
@@ -30,7 +32,8 @@ const MainLayout = () => {
                     {
                         location.pathname === '/' || location.pathname === '/about_us' || 
                         location.pathname === '/marathons' || location.pathname === '/auth/login' || 
-                        location.pathname === '/auth/register' || location.pathname === '/contact'
+                        location.pathname === '/auth/register' || location.pathname === '/contact' ||
+                        location.pathname === `/marathon_details/${params.id}`
                         ?
                             (
                                 location?.pathname === '/auth/login' || location?.pathname === '/auth/register'
