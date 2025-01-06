@@ -42,7 +42,7 @@ const Navbar = () => {
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/' className="py-2 px-4 bg-primary-yellow">Home</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/about_us' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">About Us</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/marathons' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Marathons</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
+                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/dashboard' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/contact' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/auth/login' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Login</NavLink></li>
                                     </ul>
@@ -70,7 +70,7 @@ const Navbar = () => {
                                     <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 bg-primary-yellow"><NavLink to='/'>Home</NavLink></li>
                                     <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/about_us'>About Us</NavLink></li>
                                     <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/marathons'>Marathons</NavLink></li>
-                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink>Dashboard</NavLink></li>
+                                    <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/dashboard'>Dashboard</NavLink></li>
                                     <li className="font-roboto text-base font-medium text-head-charleston-green w-full py-3 px-6 uppercase border-b border-black/5 transition ease-linear duration-200 hover:bg-primary-yellow"><NavLink to='/contact'>Contact Us</NavLink></li>
                                 </ul>
                             </nav>
