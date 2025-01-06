@@ -24,7 +24,7 @@ const RegistrationPage = () => {
             <div className="w-full min-h-[500px] py-16 lg:py-24">
                 <div className="w-full">
                     <div className="container mx-auto px-4">
-                        <div className="w-full min-h-[400px] bg-slate-50">
+                        <div className="w-full min-h-[400px] ">
                             <div className="w-full min-h-[400px] text-center p-10 bg-pattern bg-cover bg-center bg-no-repeat lg:p-12">
                                 <div className="w-full mb-5">
                                     <div className="w-full mb-5">
