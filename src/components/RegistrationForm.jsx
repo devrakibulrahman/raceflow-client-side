@@ -2,13 +2,13 @@
 const RegistrationForm = () => {
 
     // form submit function declare here ----> 
-    // const handleFormSubmit = (e) => {
-    //     e.preventDefault();
-    // };
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+    };
 
     return (
         <>
-            <form className="w-full">
+            <form onSubmit={handleFormSubmit} className="w-full">
                 <div className="w-full grid grid-cols-1 gap-6">
                     <div className="w-full flex flex-col items-center justify-center gap-4 md:flex-row">
                         <div className="w-full">
