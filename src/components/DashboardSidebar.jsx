@@ -63,7 +63,7 @@ const DashboardSidebar = () => {
                     </div>
                 </div>
                 <div className="w-full absolute bottom-5 left-0 px-5">
-                    <button className="font-roboto text-head-charleston-green font-bold text-base uppercase bg-primary-yellow py-3 px-5 w-full transition-all ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Go To Home</button>
+                    <button onClick={handleGoToHome} className="font-roboto text-head-charleston-green font-bold text-base uppercase bg-primary-yellow py-3 px-5 w-full transition-all ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Go To Home</button>
                 </div>
             </div>
         </>
