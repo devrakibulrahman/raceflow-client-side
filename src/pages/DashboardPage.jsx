@@ -1,9 +1,12 @@
+import DashboardNavbar from "../components/DashboardNavbar";
 
 const DashboardPage = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <div className="w-full">
+                <DashboardNavbar></DashboardNavbar>
+            </div>
+        </>
     );
 };
 
