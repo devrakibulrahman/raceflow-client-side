@@ -1,7 +1,8 @@
-import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { FaThreads, FaXTwitter } from "react-icons/fa6";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { FaDiscord, FaFacebookF, FaLinkedinIn, FaRunning } from "react-icons/fa";
+import { FaThreads, FaXTwitter, FaLocationDot } from "react-icons/fa6";
+import { MdKeyboardArrowRight, MdAppRegistration } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
+import { FaCalendarAlt, FaStopwatch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const DetailsPage = () => {
@@ -25,14 +26,66 @@ const DetailsPage = () => {
                 <div className="w-full max-w-[1150px] mx-auto px-4">
                     <div className="w-full min-h-[500px] grid grid-cols-1 gap-10 lg:grid-cols-3">
                         <div className="w-full min-h-[400px] lg:col-span-2">
-                            <div className="w-full min-h-[400px] bg-blue-500">
-
+                            <div className="w-full relative">
+                                <div className="w-full h-[400px] bg-blue-500 overflow-hidden">
+                                    <img src={`https://i.ibb.co.com/p2DMJtg/pexels-runffwpu-2640427.jpg`} alt="details image" className="w-full h-full object-cover" />
+                                </div>
+                                <div className="w-full h-full absolute top-0 left-0 p-5 flex items-end justify-end">
+                                    <div className="px-3 py-2 bg-primary-yellow inline-block">
+                                        <p className="font-roboto text-sm text-head-charleston-green uppercase font-medium tracking-widest">Marathon Start Date : Fed 20, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-full min-h-[200px] mt-6 flex flex-col items-start justify-start gap-4">
+                                <div className="w-full flex flex-col gap-y-2 sm:gap-y-0 sm:items-center sm:justify-between sm:flex-row">
+                                    <div className="w-auto flex items-center gap-2">
+                                        <div className="w-auto">
+                                            <FaCalendarAlt className="text-sm mb-1 text-head-charleston-green"></FaCalendarAlt>
+                                        </div>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Start Register Date : <span className="font-normal text-para-gray">Jan 10, 2025</span></p>
+                                    </div>
+                                    <div className="w-auto flex items-center gap-2">
+                                        <div className="w-auto">
+                                            <FaStopwatch className="text-base mb-1 text-head-charleston-green"></FaStopwatch>
+                                        </div>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">End Register Date : <span className="font-normal text-para-gray">Fed 10, 2025</span></p>
+                                    </div>
+                                </div>
+                                <div className="w-full">
+                                    <h1 className="font-roboto text-2xl font-bold text-head-charleston-green uppercase leading-snug transition-all ease-linear duration-200 md:text-[30px] xl:text-[35px]">Registration For Join This Marathon</h1>
+                                </div>
+                                <div className="w-full">
+                                    <p className="font-roboto text-para-gray font-normal ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet assumenda aperiam fugit ab voluptas. Nihil perspiciatis quae vitae qui nulla excepturi accusantium vel, dolores eligendi molestias non asperiores tempore expedita vero. Totam magnam quis ipsum illo? Consectetur blanditiis obcaecati inventore, enim quibusdam qui iure laborum, itaque repudiandae quidem consequatur culpa?</p>
+                                </div>
+                                <div className="w-full pt-6 border-t border-slate-200 flex flex-col gap-4 sm:items-center sm:justify-start sm:flex-row">
+                                    <div className="w-auto flex items-center gap-2">
+                                        <div className="w-auto">
+                                            <FaLocationDot className="text-base mb-1 text-head-charleston-green"></FaLocationDot    >
+                                        </div>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Location : <span className="font-normal text-para-gray">Paris</span></p>
+                                    </div>
+                                    <div className="w-auto flex items-center gap-2">
+                                        <div className="w-auto">
+                                            <FaRunning className="text-lg mb-1 text-head-charleston-green"></FaRunning>
+                                        </div>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Distance : <span className="font-normal text-para-gray">30 kilometers</span></p>
+                                    </div>
+                                    <div className="w-auto flex items-center gap-2">
+                                        <div className="w-auto">
+                                            <MdAppRegistration className="text-xl text-head-charleston-green"></MdAppRegistration>
+                                        </div>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Registration Count : <span className="font-normal text-para-gray">01</span></p>
+                                    </div>
+                                </div>
+                                <div className="w-full flex items-center md:justify-end">
+                                    <button className="w-full bg-primary-yellow py-3 px-4 mt-4 border-2 border-primary-yellow font-roboto text-base text-head-charleston-green font-bold uppercase tracking-wide transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow hover:border-head-charleston-green md:max-w-[200px]">Registration Now</button>
+                                </div>
                             </div>
                         </div>
-                        <div className="w-full min-h-[400px] grid grid-cols-1 gap-6">
+                        <div className="w-full min-h-[400px] flex flex-col items-center gap-6">
                             <div className="w-full min-h-[200px] bg-slate-50 overflow-hidden">
                                 <div className="w-full min-h-[225px] bg-left-column1-img bg-cover bg-top bg-no-repeat md:min-h-[400px] lg:min-h-[225px]"></div>
-                                <div className="w-full min-h-[100px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
+                                <div className="w-full min-h-[200px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
                                     <h3 className="font-roboto text-base text-para-gray font-normal">Marathon</h3>
                                     <div className="w-full mt-2 space-y-2">
                                         <h1 className="font-roboto text-[21px] text-head-charleston-green font-bold leading-tight uppercase">Why People Join Marathons?</h1>
