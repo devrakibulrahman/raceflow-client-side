@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage";
 import AboutPage from "../pages/AboutPage";
 import DetailsPage from "../pages/DetailsPage";
 import RegistrationPage from "../pages/RegistrationPage";
+import DashboardPage from "../pages/DashboardPage";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/marathons',
                 element: <MarathonPage></MarathonPage>
+            },
+            {
+                path: '/dashboard',
+                element: <DashboardPage></DashboardPage>
             },
             {
                 path: '/contact',
