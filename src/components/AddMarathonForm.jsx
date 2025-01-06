@@ -1,7 +1,7 @@
 
 const AddMarathonForm = () => {
     return (
-        <div className="w-full max-w-[650px] min-h-[550px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
+        <div className="w-full max-w-[950px] min-h-[550px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
             <form className="w-full">
                 <div className="w-full grid grid-cols-1 gap-7">
                     <div className="w-full flex flex-col items-center justify-center gap-5 md:flex-row">
@@ -15,17 +15,17 @@ const AddMarathonForm = () => {
                         </div>
                         <div className="w-full">
                             <div className="w-full mb-3">
-                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Last Name</label>
+                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Marathon Start Date</label>
                             </div>
                             <div className="w-full">
-                                <input type="text" placeholder="Last Name" name="lname" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                                <input type="text" placeholder="First Name" name="fname" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
                             </div>
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center justify-center gap-5 md:flex-row">
                         <div className="w-full">
                             <div className="w-full mb-3">
-                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Email</label>
+                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Start Registration Date</label>
                             </div>
                             <div className="w-full">
                                 <input type="text" placeholder="example@gmail.com" name="email" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
@@ -33,7 +33,25 @@ const AddMarathonForm = () => {
                         </div>
                         <div className="w-full">
                             <div className="w-full mb-3">
-                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Phone</label>
+                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">End Registration Date</label>
+                            </div>
+                            <div className="w-full">
+                                <input type="text" placeholder="Number" name="phone" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full flex flex-col items-center justify-center gap-5 md:flex-row">
+                        <div className="w-full">
+                            <div className="w-full mb-3">
+                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Location</label>
+                            </div>
+                            <div className="w-full">
+                                <input type="text" placeholder="example@gmail.com" name="email" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
+                            </div>
+                        </div>
+                        <div className="w-full">
+                            <div className="w-full mb-3">
+                                <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Running Distance</label>
                             </div>
                             <div className="w-full">
                                 <input type="text" placeholder="Number" name="phone" autoComplete="off" className="w-full p-4 font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
