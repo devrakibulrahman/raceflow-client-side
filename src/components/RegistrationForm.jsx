@@ -9,7 +9,7 @@ const RegistrationForm = () => {
     return (
         <>
             <form className="w-full">
-                <div className="w-full grid grid-cols-1 gap-4">
+                <div className="w-full grid grid-cols-1 gap-6">
                     <div className="w-full flex flex-col items-center justify-center gap-4 md:flex-row">
                         <div className="w-full">
                             <div className="w-full mb-3 text-left">
@@ -64,7 +64,7 @@ const RegistrationForm = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full mt-5 flex items-center md:justify-end">
+                    <div className="w-full flex items-center md:justify-end">
                         <button className="w-full bg-primary-yellow py-3 px-4 mt-4 border-2 border-primary-yellow font-roboto text-base text-head-charleston-green font-bold uppercase tracking-wide transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow hover:border-head-charleston-green md:max-w-[200px]">Register Now</button>
                     </div>
                 </div>
