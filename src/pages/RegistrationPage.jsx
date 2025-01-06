@@ -31,7 +31,7 @@ const RegistrationPage = () => {
                                         <h3 className="font-roboto text-sm font-medium text-para-gray uppercase">Register Now</h3>
                                     </div>
                                     <div className="w-full flex items-center justify-center flex-col">
-                                        <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] lg:text-[50px]">SUBMIT YOUR EVENT <span className="bg-primary-yellow">REGISTRATION</span> FORM.</h1>
+                                        <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] xl:text-[50px]">SUBMIT YOUR EVENT <span className="bg-primary-yellow">REGISTRATION</span> FORM.</h1>
                                         <div className="w-full max-w-[700px] mt-5">
                                             <p className="font-roboto text-xl font-normal text-para-gray leading-relaxed transition-all ease-linear duration-200 md:text-[22px]">Join the HorizonRun Challenge by completing the form below.</p>
                                         </div>
