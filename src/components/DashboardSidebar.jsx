@@ -8,7 +8,7 @@ const DashboardSidebar = () => {
 
     // hooks declare here ---->
     const navigate = useNavigate();
-    const locatoin = useLocation();
+    const location = useLocation();
 
     // event handler declare here ---->
     const handleGoToHome = () => {
@@ -35,28 +35,28 @@ const DashboardSidebar = () => {
                     <div className="w-full">
                         <nav className="w-full">
                             <ul className="w-full flex justify-center gap-y-3 flex-col">
-                                <li className="border-b border-slate-200">
-                                    <Link to='/dashboard' className="font-roboto text-base text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
-                                        <RiHome4Line className="text-base text-head-charleston-green lg:text-xl"></RiHome4Line>
+                                <li className={`border-b ${location.pathname === '/dashboard' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                    <Link to='/dashboard' className={`font-roboto text-base ${location.pathname === '/dashboard' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
+                                        <RiHome4Line className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></RiHome4Line>
                                         <span className="mt-1">Home</span>
                                     </Link>
                                 </li>
-                                <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link to='/dashboard/add_marathon' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
-                                        <IoMdAdd className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoMdAdd>
+                                <li className={`border-b ${location.pathname === '/dashboard/add_marathon' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                    <Link to='/dashboard/add_marathon' className={`font-roboto text-base ${location.pathname === '/dashboard/add_marathon' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
+                                        <IoMdAdd className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoMdAdd>
                                         <span className="mt-1">Add Marathon</span>
                                     </Link>
                                 </li>
-                                <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link to='/dashboard/my_marathon' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
-                                        <IoList className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoList>
-                                        <span className="mt-1">My Marathon List</span>
+                                <li className={`border-b ${location.pathname === '/dashboard/my_marathon' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                    <Link to='/dashboard/my_marathon' className={`font-roboto text-base ${location.pathname === '/dashboard/my_marathon' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
+                                        <IoList className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoList>
+                                        <span className="mt-1">My Marathon</span>
                                     </Link>
                                 </li>
-                                <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link to='/dashboard/my_apply' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
-                                        <LuClipboardList className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></LuClipboardList>
-                                        <span className="mt-1">My Apply List</span>
+                                <li className={`border-b ${location.pathname === '/dashboard/my_apply' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                    <Link to='/dashboard/my_apply' className={`font-roboto text-base ${location.pathname === '/dashboard/my_apply' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
+                                        <LuClipboardList className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></LuClipboardList>
+                                        <span className="mt-1">My Apply</span>
                                     </Link>
                                 </li>
                             </ul>
