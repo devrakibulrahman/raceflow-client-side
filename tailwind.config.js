@@ -27,6 +27,7 @@ export default {
         "tips2": 'url(/img/tips2.png)',
         "tips3": 'url(/img/tips3.png)',
         "registration": 'url(/img/registration.png)',
+        "marathon-registration": 'url(/img/marathon-registration.png)',
         "contact-form-img": 'url(/img/contact-form-img.png)',
         "pattern": 'url(/pattern.png)',
         "sub-pattern": 'url(/subscribe-pattern.png)'
