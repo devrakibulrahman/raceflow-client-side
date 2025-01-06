@@ -8,7 +8,7 @@ const RegistrationForm = () => {
 
     return (
         <>
-            {/* <form onSubmit={handleFormSubmit} className="w-full">
+            <form className="w-full">
                 <div className="w-full grid grid-cols-1 gap-4">
                     <div className="w-full flex flex-col items-center justify-center gap-4 md:flex-row">
                         <div className="w-full">
@@ -52,7 +52,7 @@ const RegistrationForm = () => {
                         </div>
                     </div>
                 </div>
-            </form> */}
+            </form>
         </>
     );
 };
