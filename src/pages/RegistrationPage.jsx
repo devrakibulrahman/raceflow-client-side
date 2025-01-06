@@ -37,7 +37,7 @@ const RegistrationPage = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-full">
+                                <div className="w-full mt-12">
                                     <RegistrationForm></RegistrationForm>
                                 </div>
                             </div>
