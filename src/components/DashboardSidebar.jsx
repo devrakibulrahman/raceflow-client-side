@@ -21,30 +21,30 @@ const DashboardSidebar = () => {
                         </button>
                     </div>
                 </div>
-                <div className="w-full h-full pl-5 py-5 mt-5">
+                <div className="w-full pl-5 py-5 mt-5">
                     <div className="w-full">
                         <nav className="w-full">
                             <ul className="w-full flex justify-center gap-y-3 flex-col">
                                 <li className="border-b border-slate-200">
-                                    <Link className="font-roboto text-base text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
+                                    <Link to='/dashboard' className="font-roboto text-base text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
                                         <RiHome4Line className="text-base text-head-charleston-green lg:text-xl"></RiHome4Line>
                                         <span className="mt-1">Home</span>
                                     </Link>
                                 </li>
                                 <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
+                                    <Link to='/dashboard/add_marathon' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
                                         <IoMdAdd className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoMdAdd>
                                         <span className="mt-1">Add Marathon</span>
                                     </Link>
                                 </li>
                                 <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
+                                    <Link to='/dashboard/my_marathon' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
                                         <IoList className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoList>
                                         <span className="mt-1">My Marathon List</span>
                                     </Link>
                                 </li>
                                 <li className="border-b border-slate-200 transition ease-linear duration-200 group hover:border-head-charleston-green">
-                                    <Link className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
+                                    <Link to='/dashboard/my_apply' className="font-roboto text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4">
                                         <LuClipboardList className="text-base text-black/40 transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></LuClipboardList>
                                         <span className="mt-1">My Apply List</span>
                                     </Link>
@@ -52,6 +52,9 @@ const DashboardSidebar = () => {
                             </ul>
                         </nav>
                     </div>
+                </div>
+                <div className="w-full absolute bottom-5 left-0 px-5">
+                    <button className="font-roboto text-head-charleston-green font-bold text-base uppercase bg-primary-yellow py-3 px-5 w-full transition-all ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow">Go To Home</button>
                 </div>
             </div>
         </>
