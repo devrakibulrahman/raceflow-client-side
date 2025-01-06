@@ -17,7 +17,7 @@ const MainLayout = () => {
                     location.pathname === '/' || location.pathname === '/about_us' || 
                     location.pathname === '/contact' || location.pathname === '/marathons' ||
                     location.pathname === '/auth/login' || location.pathname === '/auth/register' ||
-                    location.pathname === `/marathon_details/${params.id}`
+                    location.pathname === `/marathon_details/${params.id}` || location.pathname === `/marathon_registration/${params.id}`
                     ?
                         <div className="w-full">
                             <Header></Header>
@@ -33,7 +33,7 @@ const MainLayout = () => {
                         location.pathname === '/' || location.pathname === '/about_us' || 
                         location.pathname === '/marathons' || location.pathname === '/auth/login' || 
                         location.pathname === '/auth/register' || location.pathname === '/contact' ||
-                        location.pathname === `/marathon_details/${params.id}`
+                        location.pathname === `/marathon_details/${params.id}` || location.pathname === `/marathon_registration/${params.id}`
                         ?
                             (
                                 location?.pathname === '/auth/login' || location?.pathname === '/auth/register'
