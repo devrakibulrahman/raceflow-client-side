@@ -4,9 +4,9 @@ import DashboardSidebar from "../components/DashboardSidebar";
 const DashboardPage = () => {
     return (
         <>
-            <div className="w-full">
-                <DashboardNavbar></DashboardNavbar>
+            <div className="w-full min-h-screen flex">
                 <DashboardSidebar></DashboardSidebar>
+                <DashboardNavbar></DashboardNavbar>
             </div>
         </>
     );
