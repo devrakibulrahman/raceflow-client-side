@@ -2,12 +2,13 @@ import { IoMdMenu, IoMdClose, IoMdAdd } from "react-icons/io";
 import { IoList } from "react-icons/io5";
 import { RiHome4Line } from "react-icons/ri";
 import { LuClipboardList } from "react-icons/lu";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const DashboardSidebar = () => {
 
     // hooks declare here ---->
     const navigate = useNavigate();
+    const locatoin = useLocation();
 
     // event handler declare here ---->
     const handleGoToHome = () => {
