@@ -9,6 +9,11 @@ const DashboardSidebar = () => {
     // hooks declare here ---->
     const navigate = useNavigate();
 
+    // event handler declare here ---->
+    const handleGoToHome = () => {
+        navigate('/');
+    };
+
     return (
         <>
             <div className="w-64 h-full bg-white border-r border-slate-200 fixed top-0 left-0">
