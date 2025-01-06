@@ -1,5 +1,5 @@
 
-const MyMarathonList = () => {
+const MyMarathonListTab = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const MyMarathonList = () => {
     );
 };
 
-export default MyMarathonList;
+export default MyMarathonListTab;
