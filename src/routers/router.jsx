@@ -9,6 +9,7 @@ import MarathonPage from "../pages/MarathonPage";
 import ErrorPage from "../pages/ErrorPage";
 import AboutPage from "../pages/AboutPage";
 import DetailsPage from "../pages/DetailsPage";
+import RegistrationPage from "../pages/RegistrationPage";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: '/marathon_details/:id',
                 element: <DetailsPage></DetailsPage>,
+            },
+            {
+                path: '/marathon_registration/:id',
+                element: <RegistrationPage></RegistrationPage>
             },
             {
                 path: '/auth',
