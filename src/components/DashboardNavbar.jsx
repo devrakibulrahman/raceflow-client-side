@@ -6,8 +6,8 @@ const DashboardNavbar = () => {
     return (
         <>
             <div className="w-full max-h-[70px] border-b border-slate-200 ml-64 px-5 flex items-center justify-between">
-                <div className="w-auto">
-                    <button className="w-auto">
+                <div className="w-auto flex items-center justify-center">
+                    <button className="w-auto lg:hidden">
                         <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
                     </button>
                 </div>
