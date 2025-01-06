@@ -2,9 +2,13 @@ import { IoMdMenu, IoMdClose, IoMdAdd } from "react-icons/io";
 import { IoList } from "react-icons/io5";
 import { RiHome4Line } from "react-icons/ri";
 import { LuClipboardList } from "react-icons/lu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const DashboardSidebar = () => {
+
+    // hooks declare here ---->
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="w-64 h-full bg-white border-r border-slate-200 fixed top-0 left-0">
