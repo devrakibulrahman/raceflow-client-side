@@ -18,6 +18,9 @@ export default {
       backgroundImage: {
         "login": 'url(/img/login.png)',
         "register": 'url(/img/register.png)',
+        "slider1": 'url(/img/bg1.png)',
+        "slider2": 'url(/img/bg2.png)',
+        "slider3": 'url(/img/bg3.png)',
         "contact": 'url(/img/contact.png)',
         "marathon": 'url(/img/marathon.png)',
         "about": 'url(/img/about.png)',
