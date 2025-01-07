@@ -1,0 +1,56 @@
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { MdAppRegistration } from "react-icons/md";
+import img from '../assets/img/card.jpg';
+
+const MarathonEventCard = () => {
+    return (
+        <>
+            <div className="w-full min-h-[450px] bg-slate-50">
+                <div className="w-full h-[225px] bg-blue-300 lg:h-[300px]">
+                    <img src={img} alt="marathon image" className="w-full h-full object-cover" />
+                </div>
+                <div className="w-full min-h-[225px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
+                    <div className="w-full">
+                        <h1 className="font-roboto text-head-charleston-green text-lg font-black uppercase mb-2 xl:text-xl">Marathon training program</h1>
+                    </div>
+                    <div className="w-full flex items-center gap-3 mt-5">
+                        <div className="w-auto">
+                            <FaLocationDot className="text-head-charleston-green text-xl"></FaLocationDot>
+                        </div>
+                        <div className="w-auto">
+                            <div className="w-auto">
+                                <p className="font-roboto text-para-gray text-base font-semibold">Location: <span className="font-normal">Staten Island</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full flex items-center gap-3 mt-5">
+                        <div className="w-auto">
+                            <FaCalendarAlt className="text-head-charleston-green text-xl mb-1"></FaCalendarAlt>
+                        </div>
+                        <div className="w-auto">
+                            <div className="w-auto">
+                                <p className="font-roboto text-para-gray text-base font-semibold">Registration Date: <span className="font-normal">April 5, 2025</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full flex items-center gap-3 mt-5">
+                        <div className="w-auto">
+                            <MdAppRegistration className="text-head-charleston-green text-2xl mb-1"></MdAppRegistration>
+                        </div>
+                        <div className="w-auto">
+                            <div className="w-auto">
+                                <p className="font-roboto text-para-gray text-base font-semibold">Register Count: <span className="font-normal">01</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-full mt-5 md:flex md:items-center md:justify-end">
+                        <button className="font-roboto text-base text-primary-yellow font-normal border border-head-charleston-green bg-head-charleston-green px-5 py-2 w-full transition-all ease-linear duration-200 hover:text-white md:w-full xl:max-w-[130px]">See Details</button>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default MarathonEventCard;
