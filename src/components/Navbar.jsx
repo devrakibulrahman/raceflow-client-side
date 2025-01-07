@@ -6,7 +6,7 @@ import { MdDarkMode } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import light from '../assets/raceflow-light.png';
+import dark from '../assets/raceflow-dark.png';
 
 const Navbar = () => {
 
@@ -28,13 +28,13 @@ const Navbar = () => {
 
     return (
         <>
-            <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? '' : 'absolute top-0 left-0'}`}>
+            <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? '' : 'absolute top-0 left-0 z-10'}`}>
                 {/* desktop navbar design */}
                 <div className='w-full min-h-[92px] py-8'>
                     <div className='container mx-auto px-4'>
                         <div className='w-full flex items-center justify-between'>
                             <div className='w-auto'>
-                                <img src={light} alt="logo" className='w-[200px] h-full object-cover' />
+                                <img src={dark} alt="logo" className='w-[200px] h-full object-cover' />
                             </div>
                             <div className="w-auto hidden lg:block">
                                 <nav className="w-auto">
@@ -50,7 +50,7 @@ const Navbar = () => {
                             </div>
                             <div className='w-auto lg:hidden'>
                                 <button onClick={handleActiveNav} className="w-auto">
-                                    <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
+                                    <IoMdMenu className="text-3xl text-white"></IoMdMenu>
                                 </button>
                             </div>
                         </div>
