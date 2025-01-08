@@ -1,8 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible  } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import { AuthContext } from "../contexts/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
 
 const RegisterForm = () => {
+
+    const {userRegister} = useContext(AuthContext);
+
     // state declare here ---->
     const [showPassword, setShowPassword] = useState(false);
 
@@ -14,6 +23,93 @@ const RegisterForm = () => {
     // form submit function declare here ----> 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        const form = new FormData(e.target);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        const terms = form.get('terms');
+
+        const upperPassRex = /(?=.*[A-Z])/;
+        const lowerPassRex = /(?=.*[a-z])/;
+
+        if(name === '' || photo === '' || email === ''){
+            toast.error('Any field should not empty', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        };
+        
+        if(!upperPassRex.test(password)){
+            toast.error('Password must be one uppercase!', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        };
+
+        if(!lowerPassRex.test(password)){
+            toast.error('Password must be one lowercase!', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        };
+
+        if(password.length < 6){
+            toast.error('Password must be 6 character!', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        };
+
+        if(!terms){
+            toast.error('Please accept our terms and condition!', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        };
+
+        userRegister(email, password)
+            .then(() => {
+                updateProfile(auth.currentUser,{displayName: name, photoURL: photo})
+                    .then(() => {
+                        e.target.reset();
+                        toast.error('Please accept our terms and condition!', {
+                            position: "top-right",
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            autoClose: 3000,
+                        });
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    })
+            })
+            .catch(err => {
+                if(err?.message){
+                    toast.error('Email Already in use. Please Login!', {
+                        position: "top-right",
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        autoClose: 3000,
+                    });
+                };
+            })
     };
 
     return (
@@ -54,7 +150,7 @@ const RegisterForm = () => {
                                 </div>
                                 <div className="w-full relative">
                                     <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" autoComplete="off" className="w-full py-4 pl-4 pr-[55px] font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
-                                    <button onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+                                    <div onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
                                         {
                                             showPassword
                                             ?
@@ -62,7 +158,7 @@ const RegisterForm = () => {
                                             :
                                                 <AiFillEye className="text-2xl text-[#A1A1AA]"></AiFillEye>
                                         }
-                                    </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +166,7 @@ const RegisterForm = () => {
                     <div className="w-full">
                         <div className="w-full py-2 mb-3">
                             <div className="w-auto flex items-center gap-2">
-                                <input type="checkbox" />
+                                <input type="checkbox" name="terms" />
                                 <p className="font-roboto text-head-charleston-green text-base font-medium ">Accept Term & Condition</p>
                             </div>
                         </div>
@@ -85,6 +181,7 @@ const RegisterForm = () => {
                     </div>
                 </div>
             </form>
+            <ToastContainer />
         </>
     );
 };

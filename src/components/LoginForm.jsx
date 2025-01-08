@@ -3,10 +3,13 @@ import { AiFillEye, AiFillEyeInvisible  } from "react-icons/ai";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 const LoginForm = () => {
 
-    const {googleSignIn} = useContext(AuthContext);
+    const {googleSignIn, userSignIn} = useContext(AuthContext);
     
     // state declare here ---->
     const [showPassword, setShowPassword] = useState(false);
@@ -27,6 +30,40 @@ const LoginForm = () => {
     // form submit function declare here ----> 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        const form = new FormData(e.target);
+        const email = form.get('email');
+        const pass = form.get('password');
+
+        const emailRex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if(!emailRex.test(email)){
+            toast.error('Invalid email address. Please check your email!', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+            });
+            return;
+        };
+
+        userSignIn(email, pass)
+            .then(() => {
+                toast.success('Login successful!', {
+                    position: "top-right",
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    autoClose: 3000,
+                });
+            })
+            .catch(() => {
+                toast.error('Invalid credential', {
+                    position: "top-right",
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    autoClose: 3000,
+                });
+            })
     };
 
     return (
@@ -48,7 +85,7 @@ const LoginForm = () => {
                             </div>
                             <div className="w-full relative">
                                 <input type={showPassword ? 'text' : 'password'} placeholder="password" name="password" autoComplete="off" className="w-full py-4 pl-4 pr-[55px] font-roboto font-normal text-base text-head-charleston-green bg-white border border-slate-200 transition ease-linear duration-200 hover:border-head-charleston-green focus:outline-none placeholder:text-[#A1A1AA] placeholder:font-light"/>
-                                <button onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer">
+                                <div onClick={handleShowPassword} className="w-auto absolute top-1/2 right-4 transform -translate-y-1/2 cursor-pointer z-10">
                                     {
                                         showPassword
                                         ?
@@ -56,7 +93,7 @@ const LoginForm = () => {
                                         :
                                             <AiFillEye className="text-2xl text-[#A1A1AA]"></AiFillEye>
                                     }
-                                </button>
+                                </div>
                             </div>
                         </div>
                         <div className="w-full py-2 mt-3 flex items-center justify-between">
@@ -92,6 +129,7 @@ const LoginForm = () => {
                     </div>
                 </div>
             </form>
+            <ToastContainer />
         </>
     );
 };
