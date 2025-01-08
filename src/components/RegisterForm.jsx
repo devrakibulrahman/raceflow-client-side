@@ -89,7 +89,7 @@ const RegisterForm = () => {
                 updateProfile(auth.currentUser,{displayName: name, photoURL: photo})
                     .then(() => {
                         e.target.reset();
-                        toast.error('Please accept our terms and condition!', {
+                        toast.success('Login Successful!', {
                             position: "top-right",
                             hideProgressBar: true,
                             closeOnClick: true,

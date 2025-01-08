@@ -55,6 +55,7 @@ const LoginForm = () => {
                     closeOnClick: true,
                     autoClose: 3000,
                 });
+                e.target.reset();
             })
             .catch(() => {
                 toast.error('Invalid credential', {

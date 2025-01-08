@@ -8,6 +8,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import dark from '../assets/raceflow-dark.png';
 import { AuthContext } from "../contexts/AuthProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
 
@@ -31,8 +32,13 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         userSignOut()
-            .then(res => {
-                console.log(res);
+            .then(() => {
+                toast.success('Log Out successful!', {
+                    position: "top-right",
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    autoClose: 3000,
+                });
             })
             .catch(err => console.log(err))
     };
