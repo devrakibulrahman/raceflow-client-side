@@ -1,6 +1,6 @@
 import { IoMdMenu, IoMdClose, IoMdAdd } from "react-icons/io";
 import { IoList } from "react-icons/io5";
-import { RiHome4Line } from "react-icons/ri";
+// import { RiHome4Line } from "react-icons/ri";
 import { LuClipboardList } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -35,12 +35,12 @@ const DashboardSidebar = () => {
                     <div className="w-full">
                         <nav className="w-full">
                             <ul className="w-full flex justify-center gap-y-3 flex-col">
-                                <li className={`border-b ${location.pathname === '/dashboard' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                {/* <li className={`border-b ${location.pathname === '/dashboard' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
                                     <Link to='/dashboard' className={`font-roboto text-base ${location.pathname === '/dashboard' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
                                         <RiHome4Line className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></RiHome4Line>
                                         <span className="mt-1">Home</span>
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li className={`border-b ${location.pathname === '/dashboard/add_marathon' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
                                     <Link to='/dashboard/add_marathon' className={`font-roboto text-base ${location.pathname === '/dashboard/add_marathon' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
                                         <IoMdAdd className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoMdAdd>

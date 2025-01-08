@@ -14,7 +14,7 @@ import DashboardPage from "../pages/DashboardPage";
 import HomeTab from "../pages/dashboard-tabs/HomeTab";
 import AddMarathonTab from "../pages/dashboard-tabs/AddMarathonTab";
 import MyMarathonListTab from "../pages/dashboard-tabs/MyMarathonListTab";
-import MyApplyTab from "../pages/dashboard-tabs/MyApplyTab";
+import MyApplyListTab from "../pages/dashboard-tabs/MyApplyListTab";
 
 const router = createBrowserRouter([
     {
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: '/dashboard/my_apply',
-                        element: <MyApplyTab></MyApplyTab>
+                        element: <MyApplyListTab></MyApplyListTab>
                     }
                 ],
             },
