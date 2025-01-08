@@ -5,10 +5,13 @@ import { RiInstagramFill } from "react-icons/ri";
 import { MdDarkMode } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import dark from '../assets/raceflow-dark.png';
+import { AuthContext } from "../contexts/AuthProvider";
 
 const Navbar = () => {
+
+    const {user, userSignOut} = useContext(AuthContext);
 
     // boolean state declare here ---->
     const [navActive, setNavActive] = useState(false);
@@ -24,6 +27,14 @@ const Navbar = () => {
 
     const handleLogin = () => {
         navigate('/auth/login');
+    };
+
+    const handleSignOut = () => {
+        userSignOut()
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err))
     };
 
     return (
@@ -44,13 +55,19 @@ const Navbar = () => {
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/marathons' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Marathons</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/dashboard' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
                                         <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/contact' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/auth/login' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Login</NavLink></li>
+                                        {
+                                            user
+                                            ?
+                                                <button onClick={handleSignOut} className="font-roboto text-base font-medium text-head-charleston-green uppercase py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Log Out</button>
+                                            :
+                                                <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/auth/login' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Login</NavLink></li>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
                             <div className='w-auto lg:hidden'>
                                 <button onClick={handleActiveNav} className="w-auto">
-                                    <IoMdMenu className="text-3xl text-white"></IoMdMenu>
+                                    <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
                                 </button>
                             </div>
                         </div>

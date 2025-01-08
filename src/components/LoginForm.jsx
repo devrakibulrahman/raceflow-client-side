@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible  } from "react-icons/ai";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthProvider";
 
 const LoginForm = () => {
+
+    const {googleSignIn} = useContext(AuthContext);
     
     // state declare here ---->
     const [showPassword, setShowPassword] = useState(false);
@@ -11,6 +14,14 @@ const LoginForm = () => {
     // event handle function declare here ---->
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
+    };
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => console.log(err))
     };
 
     // form submit function declare here ----> 
@@ -70,7 +81,7 @@ const LoginForm = () => {
                             <div className="w-full border-b border-head-charleston-green transition ease-linear duration-200"></div>
                         </div>
                         <div className="w-full mt-3">
-                            <button className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-3 transition ease-linear duration-200 group hover:bg-head-charleston-green">
+                            <button onClick={handleGoogleSignIn} className="w-full p-4 border border-head-charleston-green bg-white flex items-center justify-center gap-3 transition ease-linear duration-200 group hover:bg-head-charleston-green">
                                 <FaGoogle className="text-xl text-head-charleston-green group-hover:text-primary-yellow"></FaGoogle>
                                 <span className="font-roboto text-base text-head-charleston-green font-bold uppercase group-hover:text-primary-yellow">Log in Google</span>
                             </button>
