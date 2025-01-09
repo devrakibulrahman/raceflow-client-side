@@ -4,8 +4,17 @@ import { MdAppRegistration } from "react-icons/md";
 import { format } from 'date-fns';
 import img from "../assets/img/card.jpg";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const MarathonsCard = ({marathon}) => {
+    
+    // hooks declare here ------------------------>
+    const navigate = useNavigate();
+
+    // event handler declare here ---------------->
+    const handleSeeDetails = (id) => {
+        navigate(`/marathon_details/${id}`);
+    };
 
     return (
         <>
@@ -49,7 +58,7 @@ const MarathonsCard = ({marathon}) => {
                         </div>
                     </div>
                     <div className="w-full mt-5 md:flex md:items-center md:justify-end">
-                        <button className="font-roboto text-base text-primary-yellow font-normal border border-head-charleston-green bg-head-charleston-green px-5 py-2 w-full transition-all ease-linear duration-200 hover:text-white md:w-full xl:max-w-[130px]">See Details</button>
+                        <button onClick={() => handleSeeDetails(marathon?._id)} className="font-roboto text-base text-primary-yellow font-normal border border-head-charleston-green bg-head-charleston-green px-5 py-2 w-full transition-all ease-linear duration-200 hover:text-white md:w-full xl:max-w-[130px]">See Details</button>
                     </div>
                 </div>
             </div>
