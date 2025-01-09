@@ -1,9 +1,12 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAppRegistration } from "react-icons/md";
+import { format } from 'date-fns';
 import img from "../assets/img/card.jpg";
+import PropTypes from "prop-types";
 
-const MarathonsCard = () => {
+const MarathonsCard = ({marathon}) => {
+
     return (
         <>
             <div className="w-full min-h-[450px] bg-slate-50">
@@ -12,8 +15,8 @@ const MarathonsCard = () => {
                 </div>
                 <div className="w-full min-h-[225px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
                     <div className="w-full">
-                        <h1 className="font-roboto text-head-charleston-green text-lg font-black uppercase mb-2 xl:text-xl">Marathon training program</h1>
-                        <p className="font-roboto text-para-gray text-base font-normal leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, optio.</p>
+                        <h1 className="font-roboto text-head-charleston-green text-lg font-black uppercase mb-2 xl:text-xl">{marathon?.marathonTitle}</h1>
+                        <p className="font-roboto text-para-gray text-base font-normal leading-relaxed">{`${marathon?.description.substring(1, 40)}...`}</p>
                     </div>
                     <div className="w-full flex items-center gap-3 mt-5">
                         <div className="w-auto">
@@ -21,7 +24,7 @@ const MarathonsCard = () => {
                         </div>
                         <div className="w-auto">
                             <div className="w-auto">
-                                <p className="font-roboto text-para-gray text-base font-semibold">Start Line: <span className="font-normal">Staten Island</span></p>
+                                <p className="font-roboto text-para-gray text-base font-semibold">Start Line: <span className="font-normal">{marathon?.location}</span></p>
                             </div>
                         </div>
                     </div>
@@ -31,7 +34,7 @@ const MarathonsCard = () => {
                         </div>
                         <div className="w-auto">
                             <div className="w-auto">
-                                <p className="font-roboto text-para-gray text-base font-semibold">End Date: <span className="font-normal">April 5, 2025</span></p>
+                                <p className="font-roboto text-para-gray text-base font-semibold">Reg End Date: <span className="font-normal">{format(new Date(marathon?.registrationEndDate), 'PPP')}</span></p>
                             </div>
                         </div>
                     </div>
@@ -41,7 +44,7 @@ const MarathonsCard = () => {
                         </div>
                         <div className="w-auto">
                             <div className="w-auto">
-                                <p className="font-roboto text-para-gray text-base font-semibold">Register Count: <span className="font-normal">01</span></p>
+                                <p className="font-roboto text-para-gray text-base font-semibold">Register Count: <span className="font-normal">{marathon?.regCount}</span></p>
                             </div>
                         </div>
                     </div>
@@ -52,6 +55,10 @@ const MarathonsCard = () => {
             </div>
         </>
     );
+};
+
+MarathonsCard.propTypes = {
+    marathon: PropTypes.object.isRequired,
 };
 
 export default MarathonsCard;

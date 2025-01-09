@@ -11,7 +11,6 @@ import AboutPage from "../pages/AboutPage";
 import DetailsPage from "../pages/DetailsPage";
 import RegistrationPage from "../pages/RegistrationPage";
 import DashboardPage from "../pages/DashboardPage";
-import HomeTab from "../pages/dashboard-tabs/HomeTab";
 import AddMarathonTab from "../pages/dashboard-tabs/AddMarathonTab";
 import MyMarathonListTab from "../pages/dashboard-tabs/MyMarathonListTab";
 import MyApplyListTab from "../pages/dashboard-tabs/MyApplyListTab";
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <DashboardPage></DashboardPage>,
                 children: [
-                    {
-                        index: true,
-                        element: <HomeTab></HomeTab>
-                    },
                     {
                         path: '/dashboard/add_marathon',
                         element: <AddMarathonTab></AddMarathonTab>
