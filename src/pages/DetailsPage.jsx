@@ -3,9 +3,13 @@ import { FaThreads, FaXTwitter, FaLocationDot } from "react-icons/fa6";
 import { MdKeyboardArrowRight, MdAppRegistration } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaCalendarAlt, FaStopwatch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
+
+    // hooks declare here ------------------->
+    const param = useParams();
+
     return (
         <>
             <div className="w-full min-h-[500px] bg-details bg-center bg-cover bg-no-repeat flex items-center justify-center">
