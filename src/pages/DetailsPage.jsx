@@ -4,11 +4,17 @@ import { MdKeyboardArrowRight, MdAppRegistration } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaCalendarAlt, FaStopwatch } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const DetailsPage = () => {
 
     // hooks declare here ------------------->
     const param = useParams();
+
+    // useEffect declare here --------------->
+    useEffect(() => {
+        
+    }, [])
 
     return (
         <>
