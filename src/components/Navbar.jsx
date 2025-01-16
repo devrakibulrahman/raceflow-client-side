@@ -47,7 +47,7 @@ const Navbar = () => {
         <>
             <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? '' : 'absolute top-0 left-0 z-10'}`}>
                 {/* desktop navbar design */}
-                <div className='w-full min-h-[92px] py-8'>
+                <div className='w-full min-h-[92px] py-7'>
                     <div className='container mx-auto px-4'>
                         <div className='w-full flex items-center justify-between'>
                             <div className='w-auto'>
@@ -56,17 +56,17 @@ const Navbar = () => {
                             <div className="w-auto hidden lg:block">
                                 <nav className="w-auto">
                                     <ul className="w-auto flex items-center justify-center gap-2">
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/' className="py-2 px-4 bg-primary-yellow">Home</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/about_us' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">About Us</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/marathons' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Marathons</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/dashboard' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Dashboard</NavLink></li>
-                                        <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/contact' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Contact Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/' className={`py-2 px-4 transition ${location.pathname === '/' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Home</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/about_us' className={`py-2 px-4 transition ${location.pathname === '/about_us' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} ease-linear duration-200`}>About Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/marathons' className={`py-2 px-4 ${location.pathname === '/marathons' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Marathons</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/contact' className={`py-2 px-4 ${location.pathname === '/contact' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Contact Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/dashboard' className={`py-2 px-4 transition ${location.pathname === '/dashboard' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Dashboard</NavLink></li>
                                         {
                                             user
-                                            ?
-                                                <button onClick={handleSignOut} className="font-roboto text-base font-medium text-head-charleston-green uppercase py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Log Out</button>
+                                            ?    
+                                                <li onClick={handleSignOut} className={`font-roboto text-base font-medium uppercase py-[5.5px] px-4 transition ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200 cursor-pointer`}>Login out</li>
                                             :
-                                                <li className="font-roboto text-base font-medium text-head-charleston-green uppercase"><NavLink to='/auth/login' className="py-2 px-4 transition ease-linear duration-200 hover:bg-primary-yellow">Login</NavLink></li>
+                                                <li className="font-roboto text-base font-medium uppercase"><NavLink to='/auth/login' className={`py-2 px-4 transition ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Login</NavLink></li>
                                         }
                                     </ul>
                                 </nav>

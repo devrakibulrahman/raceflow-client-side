@@ -3,33 +3,9 @@ import { FaThreads, FaXTwitter, FaLocationDot } from "react-icons/fa6";
 import { MdKeyboardArrowRight, MdAppRegistration } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaCalendarAlt, FaStopwatch } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { format } from 'date-fns';
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const DetailsPage = () => {
-
-    // state declare here ------------------->
-    const [marathonDetails, setMarathonDetails] = useState([]);
-
-    // hooks declare here ------------------->
-    const param = useParams();
-    
-    // useEffect declare here --------------->
-    useEffect(() => {
-        fetchMarathonDetailsData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    
-    const fetchMarathonDetailsData = async () => {
-        try{
-            const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathon/${param.id}`);
-            setMarathonDetails(data);
-        }catch(err) {
-            console.log(err);
-        };
-    };
 
     return (
         <>
@@ -53,11 +29,11 @@ const DetailsPage = () => {
                         <div className="w-full min-h-[400px] lg:col-span-2">
                             <div className="w-full relative">
                                 <div className="w-full h-[400px] bg-blue-500 overflow-hidden">
-                                    <img src={marathonDetails?.marathonImage} alt="details image" className="w-full h-full object-cover" />
+                                    <img src={''} alt="details image" className="w-full h-full object-cover" />
                                 </div>
                                 <div className="w-full h-full absolute top-0 left-0 p-5 flex items-end justify-end">
                                     <div className="px-3 py-2 bg-primary-yellow inline-block">
-                                        <p className="font-roboto text-sm text-head-charleston-green uppercase font-medium tracking-widest">Marathon Start Date : {format(new Date(marathonDetails?.marathonStartDate), 'PPP')}</p>
+                                        <p className="font-roboto text-sm text-head-charleston-green uppercase font-medium tracking-widest">Marathon Start Date : </p>
                                     </div>
                                 </div>
                             </div>
@@ -67,39 +43,39 @@ const DetailsPage = () => {
                                         <div className="w-auto">
                                             <FaCalendarAlt className="text-sm mb-1 text-head-charleston-green"></FaCalendarAlt>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Start Register Date : <span className="font-normal text-para-gray">{format(new Date(marathonDetails?.registrationStartDate), 'PPP')}</span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Start Register Date : <span className="font-normal text-para-gray"></span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaStopwatch className="text-base mb-1 text-head-charleston-green"></FaStopwatch>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">End Register Date : <span className="font-normal text-para-gray">{format(new Date(marathonDetails?.registrationEndDate), 'PPP')}</span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">End Register Date : <span className="font-normal text-para-gray"></span></p>
                                     </div>
                                 </div>
                                 <div className="w-full">
-                                    <h1 className="font-roboto text-2xl font-bold text-head-charleston-green uppercase leading-snug transition-all ease-linear duration-200 md:text-[30px] xl:text-[35px]">{marathonDetails?.marathonTitle}</h1>
+                                    <h1 className="font-roboto text-2xl font-bold text-head-charleston-green uppercase leading-snug transition-all ease-linear duration-200 md:text-[30px] xl:text-[35px]"></h1>
                                 </div>
                                 <div className="w-full">
-                                    <p className="font-roboto text-para-gray font-normal leading-relaxed">{marathonDetails?.description}</p>
+                                    <p className="font-roboto text-para-gray font-normal leading-relaxed"></p>
                                 </div>
                                 <div className="w-full pt-6 border-t border-slate-200 flex flex-col flex-wrap gap-4 sm:items-center sm:justify-start sm:flex-row">
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaLocationDot className="text-base mb-1 text-head-charleston-green"></FaLocationDot    >
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Location : <span className="font-normal text-para-gray">{marathonDetails?.location}</span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Location : <span className="font-normal text-para-gray"></span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaRunning className="text-lg mb-1 text-head-charleston-green"></FaRunning>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Distance : <span className="font-normal text-para-gray">{marathonDetails?.runningDistance}</span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Distance : <span className="font-normal text-para-gray"></span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <MdAppRegistration className="text-xl text-head-charleston-green"></MdAppRegistration>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Registration Count : <span className="font-normal text-para-gray">{marathonDetails?.regCount}</span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Registration Count : <span className="font-normal text-para-gray"></span></p>
                                     </div>
                                 </div>
                                 <div className="w-full flex items-center md:justify-end">

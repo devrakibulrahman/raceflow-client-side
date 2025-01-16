@@ -62,7 +62,7 @@ const ContactPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-full min-h-[490px] bg-pattern bg-cover bg-center bg-no-repeat p-6 lg:h-full">
+                            <div className="w-full min-h-[490px] p-6 lg:h-full">
                                 <div className="w-full">
                                     <ContactForm></ContactForm>
                                 </div>

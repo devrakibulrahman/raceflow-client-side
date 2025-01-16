@@ -18,7 +18,7 @@ const LoginPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-full min-h-[240px] bg-pattern bg-cover bg-center bg-no-repeat p-6 md:min-h-full">
+                            <div className="w-full min-h-[240px] p-6 md:min-h-full">
                                 <div className="w-full">
                                     <h3 className="font-roboto text-head-charleston-green text-3xl font-bold uppercase">Login</h3>
                                 </div>

@@ -49,7 +49,7 @@ const AddMarathonForm = () => {
     };
 
     return (
-        <div className="w-full max-w-[950px] min-h-[550px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
+        <div className="w-full min-h-[550px] p-5">
             <form onSubmit={handleFormSubmit} className="w-full">
                 <div className="w-full grid grid-cols-1 gap-7">
                     <div className="w-full flex flex-col items-center justify-center gap-5 md:flex-row">
@@ -112,7 +112,7 @@ const AddMarathonForm = () => {
                                 <label className="font-roboto text-base text-head-charleston-green font-bold leading-snug uppercase">Running Distance</label>
                             </div>
                             <div className="w-full relative">
-                                <div onClick={() => setSelectActive(true)} className="w-full min-h-[58px] p-4 bg-white border border-slate-200 transition ease-linear duration-200 cursor-pointer flex items-center justify-between hover:border-head-charleston-green">
+                                <div onClick={() => setSelectActive(!selectActive)} className="w-full min-h-[58px] p-4 bg-white border border-slate-200 transition ease-linear duration-200 cursor-pointer flex items-center justify-between hover:border-head-charleston-green">
                                     <div className="w-auto">
                                         <span className={`font-roboto text-base ${option === 'Select Running Distance' ? 'text-[#A1A1A1] font-light' : 'text-head-charleston-green font-normal'}`}>{option}</span>
                                     </div>

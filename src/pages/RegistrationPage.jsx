@@ -15,7 +15,7 @@ const RegistrationPage = () => {
                                 <div className="w-auto"><MdKeyboardArrowRight className="text-white"></MdKeyboardArrowRight></div>
                                 <div className="w-auto"><Link className="font-roboto text-sm text-white/80 font-normal transition ease-linear duration-200 hover:text-white">Details</Link></div>
                                 <div className="w-auto"><MdKeyboardArrowRight className="text-white"></MdKeyboardArrowRight></div>
-                                <div className="w-auto"><Link className="font-roboto text-sm text-white font-normal">Contact</Link></div>
+                                <div className="w-auto"><Link className="font-roboto text-sm text-white font-normal">Registration</Link></div>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@ const RegistrationPage = () => {
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full min-h-[400px] ">
-                            <div className="w-full min-h-[400px] text-center p-10 bg-pattern bg-cover bg-center bg-no-repeat lg:p-12">
+                            <div className="w-full min-h-[400px] text-center p-10 lg:p-12">
                                 <div className="w-full mb-5">
                                     <div className="w-full mb-5">
                                         <h3 className="font-roboto text-sm font-medium text-para-gray uppercase">Register Now</h3>

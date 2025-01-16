@@ -31,6 +31,7 @@ const RegisterForm = () => {
         const password = form.get('password');
         const terms = form.get('terms');
 
+        const emailRex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const upperPassRex = /(?=.*[A-Z])/;
         const lowerPassRex = /(?=.*[a-z])/;
 
@@ -43,6 +44,16 @@ const RegisterForm = () => {
                 });
             return;
         };
+
+        if(!emailRex.test(email)){
+            toast.error('Invalid email address! Please provide valid email.', {
+                position: "top-right",
+                hideProgressBar: true,
+                closeOnClick: true,
+                autoClose: 3000,
+                });
+            return;
+        }
         
         if(!upperPassRex.test(password)){
             toast.error('Password must be one uppercase!', {

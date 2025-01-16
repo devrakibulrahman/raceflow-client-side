@@ -1,26 +1,8 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import MarathonsCard from "../components/MarathonsCard";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
 const MarathonPage = () => {
-    
-    // state declare here ------------------------------->
-    const [marathons, setMarathons] = useState([]);
-
-    useEffect(() => {
-        fetchMarathonData();
-    }, []);
-
-    const fetchMarathonData = async () => {
-        try{
-            const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathons`);
-            setMarathons(data);
-        }catch (err){
-            console.log(err);
-        };
-    };
 
     return (
         <>
@@ -57,11 +39,9 @@ const MarathonPage = () => {
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full min-h-[500px] mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                            {
-                                marathons.map((marathon) => (
-                                    <MarathonsCard key={marathon?._id} marathon={marathon}></MarathonsCard>
-                                ))
-                            }
+                            <MarathonsCard></MarathonsCard>
+                            <MarathonsCard></MarathonsCard>
+                            <MarathonsCard></MarathonsCard>
                         </div>
                     </div>
                 </div>

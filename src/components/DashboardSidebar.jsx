@@ -1,10 +1,11 @@
-import { IoMdMenu, IoMdClose, IoMdAdd } from "react-icons/io";
+import { IoMdClose, IoMdAdd } from "react-icons/io";
 import { IoList } from "react-icons/io5";
 // import { RiHome4Line } from "react-icons/ri";
 import { LuClipboardList } from "react-icons/lu";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const DashboardSidebar = () => {
+const DashboardSidebar = ({handleActive, active}) => {
 
     // hooks declare here ---->
     const navigate = useNavigate();
@@ -17,16 +18,13 @@ const DashboardSidebar = () => {
 
     return (
         <>
-            <div className="w-64 h-full bg-white border-r border-slate-200 fixed top-0 left-0">
+            <div className={`w-64 h-full bg-white border-r border-slate-200 fixed top-0 transition-all ${active ? 'left-0 ease-linear duration-500' : '-left-[100%] ease-linear duration-500'} xl:left-0`}>
                 <div className="w-full min-h-[70px] px-5 flex items-center justify-center">
                     <div className="w-full">
                         <h1 className="font-roboto text-2xl font-bold uppercase text-head-charleston-green">Dashboard</h1>
                     </div>
                     <div className="w-auto">
-                        <button className="w-auto hidden lg:block">
-                            <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
-                        </button>
-                        <button className="w-auto lg:hidden">
+                        <button onClick={handleActive} className="w-auto lg:hidden mt-[5px]">
                             <IoMdClose  className="text-3xl text-head-charleston-green"></IoMdClose >
                         </button>
                     </div>
@@ -41,21 +39,21 @@ const DashboardSidebar = () => {
                                         <span className="mt-1">Home</span>
                                     </Link>
                                 </li> */}
-                                <li className={`border-b ${location.pathname === '/dashboard/add_marathon' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
-                                    <Link to='/dashboard/add_marathon' className={`font-roboto text-base ${location.pathname === '/dashboard/add_marathon' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
-                                        <IoMdAdd className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoMdAdd>
+                                <li className={`border-b ${location.pathname === '/dashboard' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
+                                    <Link to='/dashboard' className={`font-roboto text-base ${location.pathname === '/dashboard' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
+                                        <IoMdAdd className="text-xl transition ease-linear duration-200 group-hover:text-head-charleston-green"></IoMdAdd>
                                         <span className="mt-1">Add Marathon</span>
                                     </Link>
                                 </li>
                                 <li className={`border-b ${location.pathname === '/dashboard/my_marathon' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
                                     <Link to='/dashboard/my_marathon' className={`font-roboto text-base ${location.pathname === '/dashboard/my_marathon' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
-                                        <IoList className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></IoList>
+                                        <IoList className="text-xl transition ease-linear duration-200 group-hover:text-head-charleston-green"></IoList>
                                         <span className="mt-1">My Marathon</span>
                                     </Link>
                                 </li>
                                 <li className={`border-b ${location.pathname === '/dashboard/my_apply' ? 'border-head-charleston-green' : 'border-slate-100'} transition ease-linear duration-200 group hover:border-head-charleston-green`}>
                                     <Link to='/dashboard/my_apply' className={`font-roboto text-base ${location.pathname === '/dashboard/my_apply' ? 'text-head-charleston-green' : 'text-black/40'} transition ease-linear duration-200 group-hover:text-head-charleston-green font-medium flex items-center justify-start gap-3 py-4`}>
-                                        <LuClipboardList className="text-base transition ease-linear duration-200 group-hover:text-head-charleston-green lg:text-xl"></LuClipboardList>
+                                        <LuClipboardList className="text-xl transition ease-linear duration-200 group-hover:text-head-charleston-green"></LuClipboardList>
                                         <span className="mt-1">My Apply</span>
                                     </Link>
                                 </li>
@@ -69,6 +67,11 @@ const DashboardSidebar = () => {
             </div>
         </>
     );
+};
+
+DashboardSidebar.propTypes = {
+    handleActive: PropTypes.func.isRequired,
+    active: PropTypes.bool.isRequired,
 };
 
 export default DashboardSidebar;
