@@ -3,9 +3,40 @@ import { FaThreads, FaXTwitter, FaLocationDot } from "react-icons/fa6";
 import { MdKeyboardArrowRight, MdAppRegistration } from "react-icons/md";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaCalendarAlt, FaStopwatch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { format } from "date-fns";
 
 const DetailsPage = () => {
+
+    //? state declare here ------------------------>
+    const [marathonDetails, setMarathonDetails] = useState({});
+
+    //? hooks declare here ------------------------> 
+    const params = useParams();
+    const navigate = useNavigate();
+    
+    //? useEffect declare here -------------------->
+    useEffect(() => {
+        fetchMarathonDetails();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [params?.id]);
+    
+    //? data fetch function declare here ---------->
+    const fetchMarathonDetails = async () => {
+        try{
+            const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathon_details/${params.id}`);
+            setMarathonDetails(data);
+        }catch(err){
+            console.log(err);
+        };
+    };
+
+    //? event handler declare here ---------------->
+    const handleRegistration = (id) => {
+        navigate(`/marathon_registration/${id}`);
+    };
 
     return (
         <>
@@ -24,16 +55,24 @@ const DetailsPage = () => {
                 </div>
             </div>
             <div className="w-full min-h-[500px] py-16 lg:py-24">
-                <div className="w-full max-w-[1150px] mx-auto px-4">
+                <div className="w-full max-w-[980px] mx-auto px-4 xl:max-w-[1150px]">
                     <div className="w-full min-h-[500px] grid grid-cols-1 gap-10 lg:grid-cols-3">
                         <div className="w-full min-h-[400px] lg:col-span-2">
                             <div className="w-full relative">
                                 <div className="w-full h-[400px] bg-blue-500 overflow-hidden">
-                                    <img src={''} alt="details image" className="w-full h-full object-cover" />
+                                    <img src={marathonDetails?.marathonImage} alt="details image" className="w-full h-full object-cover" />
                                 </div>
                                 <div className="w-full h-full absolute top-0 left-0 p-5 flex items-end justify-end">
                                     <div className="px-3 py-2 bg-primary-yellow inline-block">
-                                        <p className="font-roboto text-sm text-head-charleston-green uppercase font-medium tracking-widest">Marathon Start Date : </p>
+                                        <p className="font-roboto text-sm text-head-charleston-green uppercase font-medium tracking-widest">Marathon Start Date :
+                                            <span>
+                                                {
+                                                    marathonDetails?.marathonStartDate
+                                                    &&
+                                                    format(new Date(marathonDetails?.marathonStartDate), 'PPP')
+                                                }
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -43,43 +82,65 @@ const DetailsPage = () => {
                                         <div className="w-auto">
                                             <FaCalendarAlt className="text-sm mb-1 text-head-charleston-green"></FaCalendarAlt>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Start Register Date : <span className="font-normal text-para-gray"></span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Start Register Date : <span className="font-normal text-para-gray">{
+                                            marathonDetails?.registrationStartDate
+                                            &&
+                                            format(new Date(marathonDetails?.registrationStartDate), 'PPP')
+                                        }</span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaStopwatch className="text-base mb-1 text-head-charleston-green"></FaStopwatch>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">End Register Date : <span className="font-normal text-para-gray"></span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">End Register Date : <span className="font-normal text-para-gray">{
+                                            marathonDetails?.registrationEndDate
+                                            &&
+                                            format(new Date(marathonDetails?.registrationEndDate), 'PPP')
+                                        }</span></p>
                                     </div>
                                 </div>
                                 <div className="w-full">
-                                    <h1 className="font-roboto text-2xl font-bold text-head-charleston-green uppercase leading-snug transition-all ease-linear duration-200 md:text-[30px] xl:text-[35px]"></h1>
+                                    <h1 className="font-roboto text-2xl font-bold text-head-charleston-green uppercase leading-snug transition-all ease-linear duration-200 md:text-[30px] xl:text-[35px]">{marathonDetails?.marathonTitle && marathonDetails?.marathonTitle}</h1>
                                 </div>
                                 <div className="w-full">
-                                    <p className="font-roboto text-para-gray font-normal leading-relaxed"></p>
+                                    <p className="font-roboto text-para-gray font-normal leading-relaxed text-justify">{marathonDetails?.description}</p>
                                 </div>
                                 <div className="w-full pt-6 border-t border-slate-200 flex flex-col flex-wrap gap-4 sm:items-center sm:justify-start sm:flex-row">
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaLocationDot className="text-base mb-1 text-head-charleston-green"></FaLocationDot    >
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Location : <span className="font-normal text-para-gray"></span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Location : <span className="font-normal text-para-gray">{
+                                            marathonDetails?.location
+                                            &&
+                                            marathonDetails?.location
+                                        }</span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <FaRunning className="text-lg mb-1 text-head-charleston-green"></FaRunning>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Distance : <span className="font-normal text-para-gray"></span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Distance : <span className="font-normal text-para-gray">{
+                                            marathonDetails?.runningDistance
+                                            &&
+                                            marathonDetails?.runningDistance
+                                        }</span></p>
                                     </div>
                                     <div className="w-auto flex items-center gap-2">
                                         <div className="w-auto">
                                             <MdAppRegistration className="text-xl text-head-charleston-green"></MdAppRegistration>
                                         </div>
-                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Registration Count : <span className="font-normal text-para-gray"></span></p>
+                                        <p className="font-roboto text-base text-head-charleston-green font-bold">Registration Count : <span className="font-normal text-para-gray">
+                                            {
+                                                marathonDetails?.regCount
+                                                &&
+                                                marathonDetails?.regCount
+                                            }
+                                        </span></p>
                                     </div>
                                 </div>
-                                <div className="w-full flex items-center md:justify-end">
-                                    <button className="w-full bg-primary-yellow py-3 px-4 mt-4 border-2 border-primary-yellow font-roboto text-base text-head-charleston-green font-bold uppercase tracking-wide transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow hover:border-head-charleston-green md:max-w-[200px]">Registration Now</button>
+                                <div className="w-full flex items-center md:justify-end mt-5">
+                                    <button onClick={() => handleRegistration(marathonDetails?._id)} className="w-full bg-primary-yellow py-3 px-4 mt-4 border-2 border-primary-yellow font-roboto text-base text-head-charleston-green font-bold uppercase tracking-wide transition ease-linear duration-200 hover:bg-head-charleston-green hover:text-primary-yellow hover:border-head-charleston-green md:max-w-[200px]">Registration Now</button>
                                 </div>
                             </div>
                         </div>

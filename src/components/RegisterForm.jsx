@@ -100,7 +100,7 @@ const RegisterForm = () => {
                 updateProfile(auth.currentUser,{displayName: name, photoURL: photo})
                     .then(() => {
                         e.target.reset();
-                        toast.success('Login Successful!', {
+                        toast.success('Register successful!', {
                             position: "top-right",
                             hideProgressBar: true,
                             closeOnClick: true,

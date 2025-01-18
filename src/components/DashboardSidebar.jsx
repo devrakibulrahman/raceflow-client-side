@@ -24,7 +24,7 @@ const DashboardSidebar = ({handleActive, active}) => {
                         <h1 className="font-roboto text-2xl font-bold uppercase text-head-charleston-green">Dashboard</h1>
                     </div>
                     <div className="w-auto">
-                        <button onClick={handleActive} className="w-auto lg:hidden mt-[5px]">
+                        <button onClick={handleActive} className="w-auto xl:hidden mt-[5px]">
                             <IoMdClose  className="text-3xl text-head-charleston-green"></IoMdClose >
                         </button>
                     </div>

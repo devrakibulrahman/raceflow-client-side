@@ -1,38 +1,32 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdAppRegistration } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
-import img from "../assets/img/card.jpg";
+import { Link } from "react-router-dom";
+import { format } from 'date-fns';
 import PropTypes from "prop-types";
 
-const MarathonsCard = () => {
-    
-    // hooks declare here ------------------------>
-    const navigate = useNavigate();
-
-    // event handler declare here ---------------->
-    const handleSeeDetails = (id) => {
-        navigate(`/marathon_details/${id}`);
-    };
+const MarathonsCard = ({marathon}) => {
 
     return (
         <>
-            <div className="w-full min-h-[450px]">
-                <div className="w-full h-[225px] bg-blue-300">
-                    <img src={img} alt="marathon image" className="w-full h-full object-cover" />
+            <div className="w-full h-full bg-slate-50 bg-pattern bg-cover bg-center bg-no-repeat flex flex-col items-center gap-2">
+                <div className="w-full h-[225px] bg-blue-400">
+                    <img src={marathon?.marathonImage} alt="marathon image" className="w-full h-full object-cover" />
                 </div>
-                <div className="w-full min-h-[225px] bg-pattern bg-cover bg-center bg-no-repeat p-5">
-                    <div className="w-full">
-                        <h1 className="font-roboto text-head-charleston-green text-lg font-black uppercase mb-2 xl:text-xl">Marathon</h1>
-                        <p className="font-roboto text-para-gray text-base font-normal leading-relaxed">dfhiouhefbnfiehf</p>
+                <div className="w-full min-h-[225px] flex flex-col items-center p-5">
+                    <div className="w-full min-h-[80px]">
+                        <div className="w-full">
+                            <h1 className="font-roboto text-head-charleston-green text-lg font-black uppercase mb-2 xl:text-xl">{marathon?.marathonTitle}</h1>
+                            <p className="font-roboto text-para-gray text-base font-normal leading-relaxed">{marathon?.description?.substring(0, 40)}...</p>
+                        </div>
                     </div>
-                    <div className="w-full flex items-center gap-3 mt-5">
+                    <div className="w-full flex items-center gap-3 mt-3">
                         <div className="w-auto">
                             <FaLocationDot className="text-head-charleston-green text-xl"></FaLocationDot>
                         </div>
                         <div className="w-auto">
                             <div className="w-auto">
-                                <p className="font-roboto text-para-gray text-base font-semibold">Start Line: <span className="font-normal">1445/4545</span></p>
+                                <p className="font-roboto text-para-gray text-base font-semibold">Start Line: <span className="font-normal">{marathon?.location}</span></p>
                             </div>
                         </div>
                     </div>
@@ -42,11 +36,15 @@ const MarathonsCard = () => {
                         </div>
                         <div className="w-auto">
                             <div className="w-auto">
-                                <p className="font-roboto text-para-gray text-base font-semibold">Reg End Date: <span className="font-normal">55445/2314</span></p>
+                                <p className="font-roboto text-para-gray text-base font-semibold">Reg End Date: <span className="font-normal">{
+                                    marathon?.registrationEndDate
+                                    &&
+                                    format(new Date(marathon?.registrationEndDate), 'PPP')
+                                }</span></p>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full flex items-center gap-2 mt-3">
+                    <div className="w-full flex items-center gap-3 mt-3 mr-1">
                         <div className="w-auto">
                             <MdAppRegistration className="text-head-charleston-green text-[26px] mb-1"></MdAppRegistration>
                         </div>
@@ -56,8 +54,8 @@ const MarathonsCard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full mt-5 md:flex md:items-center md:justify-end">
-                        <button onClick={() => handleSeeDetails(1)} className="font-roboto text-base text-primary-yellow font-normal border border-head-charleston-green bg-head-charleston-green px-5 py-2 w-full transition-all ease-linear duration-200 hover:text-white md:w-full xl:max-w-[130px]">See Details</button>
+                    <div className="w-full mt-3 flex items-center justify-end">
+                        <Link to={`/marathon_details/${marathon?._id}`} className="flex items-center justify-center gap-2 font-roboto text-base text-head-charleston-green font-medium transition-all ease-linear duration-150 hover:underline group">See Details</Link>
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ const RegistrationPage = () => {
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full min-h-[400px] ">
-                            <div className="w-full min-h-[400px] text-center p-10 lg:p-12">
+                            <div className="w-full min-h-[400px] text-center">
                                 <div className="w-full mb-5">
                                     <div className="w-full mb-5">
                                         <h3 className="font-roboto text-sm font-medium text-para-gray uppercase">Register Now</h3>

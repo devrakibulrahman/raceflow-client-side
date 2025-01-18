@@ -4,8 +4,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthProvider";
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from "react-toastify";
+
 
 const LoginForm = () => {
 
@@ -21,8 +20,15 @@ const LoginForm = () => {
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(res => {
-                console.log(res);
+            .then((res) => {
+                if(res?.user){
+                    toast.success('Login successful!', {
+                        position: "top-right",
+                        hideProgressBar: true,
+                        closeOnClick: true,
+                        autoClose: 3000,
+                    });
+                };
             })
             .catch(err => console.log(err))
     };
@@ -132,7 +138,6 @@ const LoginForm = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer />
         </>
     );
 };
