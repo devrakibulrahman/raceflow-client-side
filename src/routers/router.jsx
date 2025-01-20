@@ -14,6 +14,7 @@ import DashboardPage from "../pages/DashboardPage";
 import AddMarathonTab from "../pages/dashboard-tabs/AddMarathonTab";
 import MyMarathonListTab from "../pages/dashboard-tabs/MyMarathonListTab";
 import MyApplyListTab from "../pages/dashboard-tabs/MyApplyListTab";
+import PrivatePage from "../pages/private/PrivatePage";
 
 const router = createBrowserRouter([
     {
@@ -31,23 +32,23 @@ const router = createBrowserRouter([
             },
             {
                 path: '/marathons',
-                element: <MarathonPage></MarathonPage>
+                element: <PrivatePage><MarathonPage></MarathonPage></PrivatePage>
             },
             {
                 path: '/dashboard',
-                element: <DashboardPage></DashboardPage>,
+                element: <PrivatePage><DashboardPage></DashboardPage></PrivatePage>,
                 children: [
                     {
                         path: '/dashboard',
-                        element: <AddMarathonTab></AddMarathonTab>
+                        element: <PrivatePage><AddMarathonTab></AddMarathonTab></PrivatePage>
                     },
                     {
                         path: '/dashboard/my_marathon',
-                        element: <MyMarathonListTab></MyMarathonListTab>
+                        element: <PrivatePage><MyMarathonListTab></MyMarathonListTab></PrivatePage>
                     },
                     {
                         path: '/dashboard/my_apply',
-                        element: <MyApplyListTab></MyApplyListTab>
+                        element: <PrivatePage><MyApplyListTab></MyApplyListTab></PrivatePage>
                     }
                 ],
             },
@@ -57,11 +58,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/marathon_details/:id',
-                element: <DetailsPage></DetailsPage>,
+                element: <PrivatePage><DetailsPage></DetailsPage></PrivatePage>,
             },
             {
                 path: '/marathon_registration/:id',
-                element: <RegistrationPage></RegistrationPage>
+                element: <PrivatePage><RegistrationPage></RegistrationPage></PrivatePage>,
             },
             {
                 path: '/auth',

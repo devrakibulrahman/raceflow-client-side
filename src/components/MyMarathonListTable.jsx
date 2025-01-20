@@ -14,6 +14,7 @@ import TableRow from '@mui/material/TableRow';
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import { AuthContext } from "../contexts/AuthProvider";
+import { PuffLoader } from "react-spinners";
 
 const MyMarathonListTable = () => {
 
@@ -24,6 +25,7 @@ const MyMarathonListTable = () => {
     const [regStartDate, setRegStartDate] = useState(null);
     const [regEndDate, setRegEndDate] = useState(null);
     const [dropDownActive, setDropDownActive] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [option, setOption] = useState('Select Running Distance');
 
     //? modal state declare here -------------------------------->
@@ -53,6 +55,7 @@ const MyMarathonListTable = () => {
         try{
             const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathon/${user?.email}`);
             setMarathon(data);
+            setLoading(false);
         }catch(err) {
             console.log(err);
         };
@@ -158,77 +161,93 @@ const MyMarathonListTable = () => {
     return (
         <>
             <div className="w-full min-h-[550px]">
-                <TableContainer className='bg-head-charleston-green rounded-tl-lg rounded-tr-lg'>
-                    <Table sx={{ minWidth: "100%"}} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">No.</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Title</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Location</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Distance</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Start Date</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Reg. Start Date</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Reg. End Date</span>
-                                </TableCell>
-                                <TableCell align="center">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Activities</span>
-                                </TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody className="overflow-y-scroll">
-                            {
-                                marathon.map((data, idx )=> (
-                                    <TableRow key={data?._id} className={`${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
+                {
+                    loading
+                    ?
+                    <div className="w-full min-h-[600px] flex items-center justify-center">
+                        <PuffLoader color="#f3e03b" />
+                    </div>
+                    :
+                    (
+                        marathon.length === 0
+                        ?
+                        <div className="w-full min-h-[600px] flex items-center justify-center">
+                            <h1 className="font-roboto text-2xl text-head-charleston-green font-bold">No Date Available!</h1>
+                        </div>
+                        :
+                        <TableContainer className='bg-head-charleston-green rounded-tl-lg rounded-tr-lg dark:bg-dark-black'>
+                            <Table sx={{ minWidth: "100%"}} aria-label="simple table">
+                                <TableHead>
+                                    <TableRow>
                                         <TableCell align="left">
-                                            <div className="w-auto overflow-hidden">
-                                                <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{idx + 1}.</span>
-                                            </div>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">No.</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <div className="w-auto overflow-hidden">
-                                                <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{data?.marathonTitle}</span>
-                                            </div>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Title</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.location}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Location</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.runningDistance}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Distance</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.marathonStartDate}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Start Date</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.registrationStartDate}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Reg. Start Date</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.registrationEndDate}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Reg. End Date</span>
                                         </TableCell>
-                                        <TableCell align="left">
-                                            <div className="w-full flex items-center justify-center gap-x-5">
-                                                <button onClick={() => handleDelete(data?._id)} className="w-auto flex items-center justify-center"><RiDeleteBin6Line className="text-xl"/></button>
-                                                <button onClick={() => handleOpen(data)} className="w-auto flex items-center justify-center"><LuFilePen className="text-lg"/></button>
-                                            </div>
+                                        <TableCell align="center">
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Activities</span>
                                         </TableCell>
                                     </TableRow>
-                                ))
-                            }
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                                </TableHead>
+                                <TableBody className="overflow-y-scroll">
+                                    {
+                                        marathon.map((data, idx )=> (
+                                            <TableRow key={data?._id} className={`${idx % 2 === 0 ? 'bg-white dark:bg-dark-gray' : 'bg-slate-50 dark:bg-light-gray'}`}>
+                                                <TableCell align="left">
+                                                    <div className="w-auto overflow-hidden">
+                                                        <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{idx + 1}.</span>
+                                                    </div>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <div className="w-auto overflow-hidden">
+                                                        <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{data?.marathonTitle}</span>
+                                                    </div>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.location}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.runningDistance}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.marathonStartDate}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.registrationStartDate}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.registrationEndDate}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <div className="w-full flex items-center justify-center gap-x-5">
+                                                        <button onClick={() => handleDelete(data?._id)} className="w-auto flex items-center justify-center"><RiDeleteBin6Line className="text-xl"/></button>
+                                                        <button onClick={() => handleOpen(data)} className="w-auto flex items-center justify-center"><LuFilePen className="text-lg"/></button>
+                                                    </div>
+                                                </TableCell>
+                                            </TableRow>
+                                        ))
+                                    }
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    )
+                }
             </div>
 
             <div className={`

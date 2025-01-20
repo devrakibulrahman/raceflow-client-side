@@ -13,7 +13,7 @@ const DashboardPage = () => {
 
     return (
         <>
-            <div className="w-full min-h-screen">
+            <div className="w-full min-h-screen overflow-x-hidden">
                 <div className="w-full flex">
                     <DashboardSidebar handleActive={handleActive} active={active}></DashboardSidebar>
                     <DashboardNavbar handleActive={handleActive} active={active}></DashboardNavbar>

@@ -6,22 +6,26 @@ import { MdDarkMode } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import dark from '../assets/raceflow-dark.png';
 import { AuthContext } from "../contexts/AuthProvider";
 import { toast } from "react-toastify";
+import dark from '../assets/raceflow-dark.png';
+import light from '../assets/raceflow-light.png';
+import useMode from "../hooks/useMode";
 
 const Navbar = () => {
 
+    //? context declare here ------------------------------> 
     const {user, userSignOut} = useContext(AuthContext);
 
-    // boolean state declare here ---->
+    //? boolean state declare here ------------------------>
     const [navActive, setNavActive] = useState(false);
 
-    // hooks declare here ---->
+    //? hooks declare here -------------------------------->
     const navigate = useNavigate();
     const location = useLocation();
+    const {theme, setTheme, modeChange} = useMode();
 
-    // event handle declare here ---->
+    //? event handle declare here ------------------------->
     const handleActiveNav = () => {
         setNavActive(!navActive);
     };
@@ -43,45 +47,62 @@ const Navbar = () => {
             .catch(err => console.log(err))
     };
 
+    const handleThemeToggle = () => {
+        setTheme(!theme);
+    };
+
     return (
         <>
-            <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? '' : 'absolute top-0 left-0 z-10'}`}>
+            <header className={`w-full ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'dark:bg-black' : 'absolute top-0 left-0 z-10'}`}>
                 {/* desktop navbar design */}
                 <div className='w-full min-h-[92px] py-7'>
                     <div className='container mx-auto px-4'>
                         <div className='w-full flex items-center justify-between'>
                             <div className='w-auto'>
-                                <img src={dark} alt="logo" className='w-[200px] h-full object-cover' />
+                                {
+                                    modeChange === 'dark'
+                                    ?
+                                        <img src={dark} alt="logo" className='w-[200px] h-full object-cover' />
+                                    :
+                                        <img src={location.pathname === '/auth/login' || location.pathname === '/auth/register' ? light : dark} alt="logo" className='w-[200px] h-full object-cover' />
+                                }
                             </div>
-                            <div className="w-auto hidden lg:block">
+                            <div className="w-auto hidden xl:block">
                                 <nav className="w-auto">
                                     <ul className="w-auto flex items-center justify-center gap-2">
-                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/' className={`py-2 px-4 transition ${location.pathname === '/' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Home</NavLink></li>
-                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/about_us' className={`py-2 px-4 transition ${location.pathname === '/about_us' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} ease-linear duration-200`}>About Us</NavLink></li>
-                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/marathons' className={`py-2 px-4 ${location.pathname === '/marathons' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Marathons</NavLink></li>
-                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/contact' className={`py-2 px-4 ${location.pathname === '/contact' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Contact Us</NavLink></li>
-                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/dashboard' className={`py-2 px-4 transition ${location.pathname === '/dashboard' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Dashboard</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/' className={`py-2 px-4 transition ${location.pathname === '/' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow dark:text-white' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Home</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/about_us' className={`py-2 px-4 transition ${location.pathname === '/about_us' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow dark:text-white' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} ease-linear duration-200`}>About Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/marathons' className={`py-2 px-4 ${location.pathname === '/marathons' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow dark:text-white' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Marathons</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/contact' className={`py-2 px-4 ${location.pathname === '/contact' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow dark:text-white' : 'text-white hover:bg-primary-yellow hover:text-head-charleston-green'} transition ease-linear duration-200`}>Contact Us</NavLink></li>
+                                        <li className="font-roboto text-base font-medium uppercase"><NavLink to='/dashboard' className={`py-2 px-4 transition ${location.pathname === '/dashboard' ? 'text-head-charleston-green bg-primary-yellow' : location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:text-head-charleston-green hover:bg-primary-yellow dark:text-white' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Dashboard</NavLink></li>
                                         {
                                             user
-                                            ?    
-                                                <li onClick={handleSignOut} className={`font-roboto text-base font-medium uppercase py-[5.5px] px-4 transition ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200 cursor-pointer`}>Login out</li>
+                                            ?  
+                                                <li onClick={handleSignOut} className="font-roboto text-base font-medium uppercase"><NavLink className={`py-2 px-4 transition ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green hover:bg-primary-yellow dark:text-white dark:hover:text-head-charleston-green' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Log Out</NavLink></li>
                                             :
                                                 <li className="font-roboto text-base font-medium uppercase"><NavLink to='/auth/login' className={`py-2 px-4 transition ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green bg-primary-yellow' : 'text-white hover:text-head-charleston-green hover:bg-primary-yellow'} ease-linear duration-200`}>Login</NavLink></li>
+                                        }
+                                        {
+                                            modeChange === 'dark'
+                                            ?
+                                                <li onClick={handleThemeToggle} className={`text-base ml-4 w-[61px] cursor-pointer font-roboto font-medium uppercase ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green dark:text-white dark:hover:text-primary-yellow' : 'text-white hover:text-primary-yellow'}`}>Light</li>
+                                            :
+                                                <li onClick={handleThemeToggle} className={`text-base ml-4 w-[61px] cursor-pointer font-roboto font-medium uppercase ${location.pathname === '/auth/login' || location.pathname === '/auth/register' ? 'text-head-charleston-green dark:text-white dark:hover:text-primary-yellow' : 'text-white hover:text-primary-yellow'}`}>Dark</li>
                                         }
                                     </ul>
                                 </nav>
                             </div>
-                            <div className='w-auto lg:hidden'>
-                                <button onClick={handleActiveNav} className="w-auto">
-                                    <IoMdMenu className="text-3xl text-head-charleston-green"></IoMdMenu>
+                            <div className='w-auto xl:hidden'>
+                                <button onClick={handleActiveNav} className="w-[30px] h-[30px]">
+                                    <IoMdMenu className="text-3xl leading-[30px] text-white"></IoMdMenu>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* mobile responsive navbar design */}
-                <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-in-out duration-500' : '-left-[100%] ease-in-out duration-500'} z-50`}>
-                    <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-linear duration-700' : '-left-[100%] ease-out duration-300'}`}>
+                <div className={`w-full h-screen bg-black/20 fixed top-0 transition-all ${navActive ? 'left-0 ease-linear duration-500' : '-left-[100%] ease-linear duration-500'} z-50`}>
+                    <div className={`w-full h-screen py-6 bg-white transition-all fixed top-0 sm:w-[350px] ${navActive ? 'left-0 ease-linear duration-700' : '-left-[100%] ease-linear duration-700'}`}>
                         <div className="w-full flex items-center justify-end pr-6">
                             <button onClick={handleActiveNav} className="w-auto">
                                 <IoMdClose className="text-3xl text-head-charleston-green"></IoMdClose>

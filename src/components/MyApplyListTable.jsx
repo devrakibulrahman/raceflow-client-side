@@ -12,12 +12,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from "axios";
+import { PuffLoader } from "react-spinners";
 
 const MyApplyListTable = () => {
 
     //? state declare here ---------------------------------->
     const [apply, setApply] = useState([]);
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     //? modal state declare here ----------------------------> 
     const [applyId, setApplyId] = useState('');
@@ -47,6 +49,7 @@ const MyApplyListTable = () => {
         try{
             const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathon_apply/${user?.email}`);
             setApply(data);
+            setLoading(false);
         }catch(err){
             console.log(err);
         };
@@ -142,63 +145,79 @@ const MyApplyListTable = () => {
     return (
         <>
             <div className="w-full min-h-[550px]">
-                <TableContainer className='bg-head-charleston-green rounded-tl-lg rounded-tr-lg'>
-                    <Table sx={{ minWidth: "100%"}} aria-label="simple table">
-                        <TableHead className="">
-                            <TableRow>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">No.</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Title</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Location</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Your Location</span>
-                                </TableCell>
-                                <TableCell align="left">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Start Date</span>
-                                </TableCell>
-                                <TableCell align="center">
-                                    <span className="font-roboto text-primary-yellow text-base font-medium">Activities</span>
-                                </TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody className="overflow-y-scroll">
-                            {
-                                apply.map((data, idx) => (
-                                    <TableRow key={data?._id} className={`${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}`}>
+                {
+                    loading
+                    ?
+                    <div className="w-full min-h-[600px] flex items-center justify-center">
+                        <PuffLoader color="#f3e03b"></PuffLoader>
+                    </div>
+                    :
+                    (
+                        apply.length === 0
+                        ?
+                        <div className="w-full min-h-[600px] flex items-center justify-center">
+                            <h1 className="font-roboto text-2xl text-head-charleston-green font-bold">No Data Available!</h1>
+                        </div>
+                        :
+                        <TableContainer className='bg-head-charleston-green rounded-tl-lg rounded-tr-lg dark:bg-dark-black'>
+                            <Table sx={{ minWidth: "100%"}} aria-label="simple table">
+                                <TableHead className="">
+                                    <TableRow>
                                         <TableCell align="left">
-                                            <div className="w-auto overflow-hidden">
-                                                <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{idx + 1}.</span>
-                                            </div>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">No.</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.title}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Title</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.location}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Location</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.your_location}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Your Location</span>
                                         </TableCell>
                                         <TableCell align="left">
-                                            <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.date}</span>
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Start Date</span>
                                         </TableCell>
-                                        <TableCell align="left">
-                                            <div className="w-full flex items-center justify-center gap-x-5">
-                                                <button onClick={() => handleDelete(data?._id)} className="w-auto flex items-center justify-center"><RiDeleteBin6Line className="text-xl"/></button>
-                                                <button onClick={() => handleOpen(data)} className="w-auto flex items-center justify-center"><LuFilePen className="text-lg"/></button>
-                                            </div>
+                                        <TableCell align="center">
+                                            <span className="font-roboto text-primary-yellow text-base font-medium dark:text-white">Activities</span>
                                         </TableCell>
                                     </TableRow>
-                                ))
-                            }
-                        </TableBody>
-                    </Table>
-                </TableContainer>
+                                </TableHead>
+                                <TableBody className="overflow-y-scroll">
+                                    {
+                                        apply.map((data, idx) => (
+                                            <TableRow key={data?._id} className={`${idx % 2 === 0 ? 'bg-white dark:bg-dark-gray' : 'bg-slate-50 dark:bg-light-gray'}`}>
+                                                <TableCell align="left">
+                                                    <div className="w-auto overflow-hidden">
+                                                        <span className="font-roboto text-head-charleston-green font-medium text-base text-ellipsis overflow-hidden whitespace-nowrap">{idx + 1}.</span>
+                                                    </div>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.title}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.location}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.your_location}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <span className="font-roboto text-head-charleston-green font-medium text-base">{data?.date}</span>
+                                                </TableCell>
+                                                <TableCell align="left">
+                                                    <div className="w-full flex items-center justify-center gap-x-5">
+                                                        <button onClick={() => handleDelete(data?._id)} className="w-auto flex items-center justify-center"><RiDeleteBin6Line className="text-xl"/></button>
+                                                        <button onClick={() => handleOpen(data)} className="w-auto flex items-center justify-center"><LuFilePen className="text-lg"/></button>
+                                                    </div>
+                                                </TableCell>
+                                            </TableRow>
+                                        ))
+                                    }
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    )
+                }
             </div>
 
             <div className={`

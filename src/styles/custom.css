@@ -48,12 +48,46 @@ input[type="number"]{
   appearance: none;
 }
 
+[data-mode="dark"] input[type="checkbox"]{
+  border: 1px solid #27272A;
+  background: transparent;
+}
+
+[data-mode="dark"] input[type="checkbox"]:checked{
+  background-color: #f3e03b;
+}
+
+[data-mode="dark"] input[type="checkbox"]::after{
+  color: black;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
 
+/*? scrollbar design ------------------------------------->  */
+::-webkit-scrollbar{
+  width: 5px;
+}
+
+::-webkit-scrollbar-button{
+  display: none;
+}
+
+::-webkit-scrollbar-track{
+  background: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #f3e03b;
+  border-radius: 12px;
+}
+
+[data-mode="dark"] ::-webkit-scrollbar-track{
+  background-color: #18181B;
+}
 
 /*? responsive container style here ---------------------->  */
 

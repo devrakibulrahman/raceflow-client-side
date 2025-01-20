@@ -21,19 +21,19 @@ const RegistrationPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[500px] py-16 lg:py-24">
+            <div className="w-full min-h-[500px] bg-white py-16 lg:py-24 dark:bg-black">
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full min-h-[400px] ">
                             <div className="w-full min-h-[400px] text-center">
                                 <div className="w-full mb-5">
                                     <div className="w-full mb-5">
-                                        <h3 className="font-roboto text-sm font-medium text-para-gray uppercase">Register Now</h3>
+                                        <h3 className="font-roboto text-sm font-medium text-para-gray uppercase dark:text-dark-gray">Register Now</h3>
                                     </div>
                                     <div className="w-full flex items-center justify-center flex-col">
-                                        <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] xl:text-[50px]">SUBMIT YOUR EVENT <span className="bg-primary-yellow">REGISTRATION</span> FORM.</h1>
+                                        <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] xl:text-[50px] dark:text-white">SUBMIT YOUR EVENT <span className="bg-primary-yellow dark:text-black">REGISTRATION</span> FORM.</h1>
                                         <div className="w-full max-w-[700px] mt-5">
-                                            <p className="font-roboto text-xl font-normal text-para-gray leading-relaxed transition-all ease-linear duration-200 md:text-[22px]">Join the HorizonRun Challenge by completing the form below.</p>
+                                            <p className="font-roboto text-xl font-normal text-para-gray leading-relaxed transition-all ease-linear duration-200 md:text-[22px] dark:text-light-gray">Join the HorizonRun Challenge by completing the form below.</p>
                                         </div>
                                     </div>
                                 </div>

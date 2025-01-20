@@ -8,7 +8,7 @@ import SubFooter from "../components/SubFooter";
 
 const MainLayout = () => {
 
-    // hooks declare here ---->
+    //? hooks declare here ----------------------->
     const location = useLocation();
     const params = useParams();
 

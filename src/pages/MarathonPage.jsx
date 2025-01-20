@@ -1,13 +1,19 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
-import MarathonsCard from "../components/MarathonsCard";
 import { useEffect, useState } from "react";
+import { PuffLoader } from "react-spinners";
+import MarathonsCard from "../components/MarathonsCard";
 import axios from "axios";
+import useMode from "../hooks/useMode";
 
 const MarathonPage = () => {
 
     //? state declare here ---------------------------->
     const [marathon, setMarathon] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    //? hooks declare here ---------------------------->
+    const {theme} = useMode(); 
     
     //? useEffect declare here ------------------------>
     useEffect(() => {
@@ -19,6 +25,7 @@ const MarathonPage = () => {
         try{
             const {data} = await axios.get(`${import.meta.env.VITE_HOST}/marathon`);
             setMarathon(data);
+            setLoading(false);
         }catch(err){
             console.log(err);
         };
@@ -40,32 +47,40 @@ const MarathonPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full min-h-[500px] bg-white py-16 lg:py-24">
+            <div className="w-full min-h-[500px] bg-white py-16 lg:py-24 dark:bg-black">
                 <div className="w-full">
                     <div className="container mx-auto px-4">
                         <div className="w-full text-center">
                             <div className="w-full mb-5">
-                                <h3 className="font-roboto text-sm font-medium text-para-gray uppercase">Choose, Explore, Join.</h3>
+                                <h3 className="font-roboto text-sm font-medium text-para-gray uppercase dark:text-dark-gray">Choose, Explore, Join.</h3>
                             </div>
                             <div className="w-full flex items-center justify-center flex-col">
-                                <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] lg:text-[50px]">FIND YOUR NEXT <span className="bg-primary-yellow">MARATHON</span></h1>
+                                <h1 className="font-roboto font-bold text-[32px] text-head-charleston-green transition-all ease-linear duration-200 md:text-[38px] lg:text-[50px] dark:text-white">FIND YOUR NEXT <span className="bg-primary-yellow dark:text-black">MARATHON</span></h1>
                                 <div className="w-full max-w-[700px] mt-5">
-                                    <p className="font-roboto text-xl font-normal text-para-gray leading-relaxed transition-all ease-linear duration-200 md:text-[22px]">Explore upcoming marathon events, choose your favorite, and dive into all the details. Your next challenge awaits start your journey today!</p>
+                                    <p className="font-roboto text-xl font-normal text-para-gray leading-relaxed transition-all ease-linear duration-200 md:text-[22px] dark:text-light-gray">Explore upcoming marathon events, choose your favorite, and dive into all the details. Your next challenge awaits start your journey today!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="w-full">
-                    <div className="container mx-auto px-4">
-                        <div className="w-full min-h-[500px] mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-                            {
-                                marathon.map((data) => (
-                                    <MarathonsCard key={data?._id} marathon={data}></MarathonsCard>
-                                ))
-                            }
+                    {
+                        loading 
+                        ?
+                        <div className="w-full min-h-[450px] mt-16 flex items-center justify-center">
+                            <PuffLoader color={`${theme ? '#f3e03b' : '#000000'}`} />
                         </div>
-                    </div>
+                        :
+                        <div className="container mx-auto px-4">
+                            <div className="w-full min-h-[500px] mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                                {
+                                    marathon.map((data) => (
+                                        <MarathonsCard key={data?._id} marathon={data}></MarathonsCard>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
             <div className="w-full min-h-[500px] bg-registration bg-cover bg-center bg-no-repeat py-16 lg:py-24">

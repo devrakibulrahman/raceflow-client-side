@@ -3,7 +3,7 @@ import RegisterForm from "../components/RegisterForm";
 const RegisterPage = () => {
     return (
         <>
-            <div className="w-full">
+            <div className="w-full bg-white dark:bg-black">
                 <div className="container mx-auto px-4">
                     <div className="w-full min-h-[calc(100vh-176px)] flex items-center justify-center">
                         <div className="w-full min-h-[600px] grid grid-cols-1 md:p-10 lg:p-10 lg:grid-cols-2">
@@ -19,7 +19,7 @@ const RegisterPage = () => {
                             </div>
                             <div className="w-full min-h-[240px] p-6 md:min-h-full">
                                 <div className="w-full">
-                                    <h3 className="font-roboto text-head-charleston-green text-3xl font-bold uppercase">Register</h3>
+                                    <h3 className="font-roboto text-head-charleston-green text-3xl font-bold uppercase dark:text-white">Register</h3>
                                 </div>
                                 <div className="w-full mt-7">
                                     <RegisterForm></RegisterForm>

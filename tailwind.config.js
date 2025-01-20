@@ -14,6 +14,10 @@ export default {
         "secondary-orange": '#ff7800',
         "head-charleston-green": '#27272A',
         "para-gray": '#52525B',
+        "dark-gray": '#A1A1AA',
+        "dark-black": '#18181B',
+        "Cultured": '#F4F4F5',
+        "light-gray": '#D4D4D8',
       },
       backgroundImage: {
         "login": 'url(/img/login.png)',
@@ -33,10 +37,20 @@ export default {
         "marathon-registration": 'url(/img/marathon-registration.png)',
         "contact-form-img": 'url(/img/contact-form-img.png)',
         "pattern": 'url(/pattern.png)',
-        "sub-pattern": 'url(/subscribe-pattern.png)'
+        "dark-pattern": 'url(/dark-pattern.png)',
+        "sub-pattern": 'url(/subscribe-pattern.png)',
+        "about-section": 'url(/img/about-section.png)',
+        "gallery1": 'url(/img/gallery1.jpg)',
+        "gallery2": 'url(/img/gallery2.jpg)',
+        "gallery3": 'url(/img/gallery3.jpg)',
+        "gallery4": 'url(/img/gallery4.jpg)',
+        "gallery5": 'url(/img/gallery5.jpg)',
+        "gallery6": 'url(/img/gallery6.jpg)',
+        "gallery7": 'url(/img/gallery7.jpg)'
       },
     },
   },
   plugins: [],
+  darkMode: ['selector', '[data-mode="dark"]'],
 }
 
